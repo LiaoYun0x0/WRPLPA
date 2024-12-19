@@ -1,0 +1,929 @@
+nohup: ignoring input
+/four_disk/wxn_work/Train_New_Model/train_window_topk_nir/models/windowTopkTransformer.py:184: SyntaxWarning: assertion is always true, perhaps remove parentheses?
+  assert(H % window_size[0] == 0, f'height ({H}) must be divisible by window ({window_size[0]})')
+/four_disk/wxn_work/Train_New_Model/train_window_topk_nir/models/windowTopkTransformer.py:185: SyntaxWarning: assertion is always true, perhaps remove parentheses?
+  assert(W % window_size[1] == 0, '')
+Arguments:
+DATA_NAME NIR
+SAVE_PATH artifacts/norm
+BATCH_SIZE 4
+SCALE 3
+HEIGHT 480
+WIDTH 640
+TRAIN_SCENE_LIMIT 2000
+TEST_SCENE_LIMIT 500
+N_EPOCH 3000
+TRAIN_EPOCH 10000
+SEED 700
+LR 0.0001
+WEIGHT_DECAY 0.001
+CLIP_MAX_NORM 0.0
+DIST_THRESH 5
+LOSS_WEIGHTS [1.0, 1.0]
+LOG_INTERVAL 600
+SAVE_INTERVAL 20
+DISTRIBUTED False
+D_COARSE_MODEL 256
+D_FINE_MODEL 128
+N_COARSE_LAYERS 4
+N_FINE_LAYERS 1
+N_HEADS 8
+BACKBONE_NAME resnet101
+MATCHING_NAME dual_softmax
+MATCH_THRESHOLD 0.2
+WINDOW_SIZE 5
+BORDER 1
+LOAD None
+SINKHORN_ITERATIONS 100
+WORLD_SIZE 2
+DIST_URL tcp://192.168.1.218:12345
+
+================================================================================
+
+Not using distributed mode
+Seed used: 700
+Trainable parameters: 41069762
+Start Training...
+/four_disk/wxn_work/Train_New_Model/train_window_topk_nir/loss/criterion.py:92: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  return torch.tensor(loss, requires_grad=True).cuda()
+Epoch: [0] [  0/107] eta: 0:02:37 lr: 0.00010000 losses: 4022.8179 (4022.8179) coarse_loss: 3838.2231 (3838.2231) fine_loss: 184.5946 (184.5946) time: 1.4710 data: 1.1649 max_mem: 6074
+Epoch: [0] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 5572.2905 (8268.9592) coarse_loss: 5438.4492 (8132.3519) fine_loss: 133.8412 (136.6074) time: 0.1802 data: 0.0001 max_mem: 9616
+Epoch: [0] Total time: 0:00:22 (0.2140 s / it 
+[[32mINFO] [[32m2023-10-20 10:46:03,332] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 5572.2905 (8268.9592) coarse_loss: 5438.4492 (8132.3519) fine_loss: 133.8412 (136.6074)[0m
+[[32mINFO] [[32m2023-10-20 10:46:06,844] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 5724.2158 (4324.7835) coarse_loss: 5571.8311 (4177.8949) fine_loss: 139.1582 (146.8886)[0m
+Epoch: [1] [  0/107] eta: 0:02:04 lr: 0.00010000 losses: 6765.1162 (6765.1162) coarse_loss: 6636.5396 (6636.5396) fine_loss: 128.5765 (128.5765) time: 1.1636 data: 0.7794 max_mem: 9616
+Epoch: [1] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6468.4355 (7710.9086) coarse_loss: 6347.3672 (7583.7694) fine_loss: 130.6447 (127.1392) time: 0.1826 data: 0.0001 max_mem: 9616
+Epoch: [1] Total time: 0:00:21 (0.2040 s / it 
+[[32mINFO] [[32m2023-10-20 10:46:28,962] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6468.4355 (7710.9086) coarse_loss: 6347.3672 (7583.7694) fine_loss: 130.6447 (127.1392)[0m
+[[32mINFO] [[32m2023-10-20 10:46:31,041] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 5009.2134 (4889.2330) coarse_loss: 4877.0918 (4748.5125) fine_loss: 132.3280 (140.7204)[0m
+Epoch: [2] [  0/107] eta: 0:01:58 lr: 0.00010000 losses: 10339.7617 (10339.7617) coarse_loss: 10219.3145 (10219.3145) fine_loss: 120.4473 (120.4473) time: 1.1033 data: 0.7799 max_mem: 9616
+Epoch: [2] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 7937.4385 (7669.7347) coarse_loss: 7814.5840 (7548.6404) fine_loss: 114.6519 (121.0943) time: 0.1915 data: 0.0001 max_mem: 9616
+Epoch: [2] Total time: 0:00:22 (0.2102 s / it 
+[[32mINFO] [[32m2023-10-20 10:46:53,531] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 7937.4385 (7669.7347) coarse_loss: 7814.5840 (7548.6404) fine_loss: 114.6519 (121.0943)[0m
+[[32mINFO] [[32m2023-10-20 10:46:55,628] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4177.7446 (4860.7551) coarse_loss: 4054.9956 (4742.9484) fine_loss: 113.2426 (117.8067)[0m
+Epoch: [3] [  0/107] eta: 0:02:00 lr: 0.00010000 losses: 2259.7996 (2259.7996) coarse_loss: 2144.5676 (2144.5676) fine_loss: 115.2319 (115.2319) time: 1.1305 data: 0.8745 max_mem: 9616
+Epoch: [3] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6746.7681 (7279.3332) coarse_loss: 6616.9424 (7161.0773) fine_loss: 121.3235 (118.2559) time: 0.1963 data: 0.0001 max_mem: 9858
+Epoch: [3] Total time: 0:00:23 (0.2163 s / it 
+[[32mINFO] [[32m2023-10-20 10:47:18,771] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6746.7681 (7279.3332) coarse_loss: 6616.9424 (7161.0773) fine_loss: 121.3235 (118.2559)[0m
+[[32mINFO] [[32m2023-10-20 10:47:20,978] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4293.8501 (4901.7560) coarse_loss: 4186.2183 (4790.9591) fine_loss: 114.2825 (110.7968)[0m
+Epoch: [4] [  0/107] eta: 0:02:11 lr: 0.00010000 losses: 7112.2422 (7112.2422) coarse_loss: 7017.1689 (7017.1689) fine_loss: 95.0732 (95.0732) time: 1.2312 data: 0.9572 max_mem: 9858
+Epoch: [4] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6243.0869 (7056.9766) coarse_loss: 6109.2705 (6945.1186) fine_loss: 102.9486 (111.8580) time: 0.2042 data: 0.0001 max_mem: 10160
+Epoch: [4] Total time: 0:00:23 (0.2232 s / it 
+[[32mINFO] [[32m2023-10-20 10:47:44,859] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6243.0869 (7056.9766) coarse_loss: 6109.2705 (6945.1186) fine_loss: 102.9486 (111.8580)[0m
+[[32mINFO] [[32m2023-10-20 10:47:47,121] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3931.2437 (4015.6258) coarse_loss: 3830.5571 (3911.5060) fine_loss: 100.0970 (104.1198)[0m
+Epoch: [5] [  0/107] eta: 0:01:57 lr: 0.00010000 losses: 6834.1787 (6834.1787) coarse_loss: 6705.0444 (6705.0444) fine_loss: 129.1342 (129.1342) time: 1.0971 data: 0.7393 max_mem: 10160
+Epoch: [5] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6906.8213 (6700.3820) coarse_loss: 6825.1484 (6587.9988) fine_loss: 103.2495 (112.3833) time: 0.2128 data: 0.0001 max_mem: 10331
+Epoch: [5] Total time: 0:00:24 (0.2249 s / it 
+[[32mINFO] [[32m2023-10-20 10:48:11,422] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6906.8213 (6700.3820) coarse_loss: 6825.1484 (6587.9988) fine_loss: 103.2495 (112.3833)[0m
+[[32mINFO] [[32m2023-10-20 10:48:13,781] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4621.8335 (4692.9802) coarse_loss: 4492.0273 (4571.5968) fine_loss: 124.3615 (121.3833)[0m
+Epoch: [6] [  0/107] eta: 0:02:22 lr: 0.00010000 losses: 13507.1074 (13507.1074) coarse_loss: 13394.1211 (13394.1211) fine_loss: 112.9863 (112.9863) time: 1.3303 data: 0.9683 max_mem: 10331
+Epoch: [6] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 7622.7515 (7186.7532) coarse_loss: 7511.9639 (7081.8240) fine_loss: 104.1999 (104.9292) time: 0.2178 data: 0.0001 max_mem: 10441
+Epoch: [6] Total time: 0:00:25 (0.2349 s / it 
+[[32mINFO] [[32m2023-10-20 10:48:38,914] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 7622.7515 (7186.7532) coarse_loss: 7511.9639 (7081.8240) fine_loss: 104.1999 (104.9292)[0m
+[[32mINFO] [[32m2023-10-20 10:48:41,281] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4826.5723 (4790.0670) coarse_loss: 4726.5190 (4679.2839) fine_loss: 101.8382 (110.7831)[0m
+Epoch: [7] [  0/107] eta: 0:02:15 lr: 0.00010000 losses: 8416.7402 (8416.7402) coarse_loss: 8285.3945 (8285.3945) fine_loss: 131.3455 (131.3455) time: 1.2656 data: 1.0280 max_mem: 10441
+Epoch: [7] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6848.3228 (6828.8367) coarse_loss: 6755.1582 (6727.7835) fine_loss: 95.6823 (101.0532) time: 0.4407 data: 0.0001 max_mem: 10849
+Epoch: [7] Total time: 0:00:43 (0.4033 s / it 
+[[32mINFO] [[32m2023-10-20 10:49:24,434] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6848.3228 (6828.8367) coarse_loss: 6755.1582 (6727.7835) fine_loss: 95.6823 (101.0532)[0m
+[[32mINFO] [[32m2023-10-20 10:49:29,993] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4238.0439 (4642.9430) coarse_loss: 4138.2715 (4541.7368) fine_loss: 99.7725 (101.2062)[0m
+Epoch: [8] [  0/107] eta: 0:03:29 lr: 0.00010000 losses: 13992.0859 (13992.0859) coarse_loss: 13886.2891 (13886.2891) fine_loss: 105.7972 (105.7972) time: 1.9569 data: 1.3258 max_mem: 10849
+Epoch: [8] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6939.0283 (6986.4432) coarse_loss: 6807.4268 (6891.1236) fine_loss: 88.1626 (95.3197) time: 0.4607 data: 0.0001 max_mem: 10914
+Epoch: [8] Total time: 0:00:51 (0.4839 s / it 
+[[32mINFO] [[32m2023-10-20 10:50:21,774] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6939.0283 (6986.4432) coarse_loss: 6807.4268 (6891.1236) fine_loss: 88.1626 (95.3197)[0m
+[[32mINFO] [[32m2023-10-20 10:50:24,801] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 5183.4927 (5046.7212) coarse_loss: 5085.7192 (4952.2859) fine_loss: 96.8315 (94.4353)[0m
+Epoch: [9] [  0/107] eta: 0:03:02 lr: 0.00010000 losses: 7243.6587 (7243.6587) coarse_loss: 7186.7178 (7186.7178) fine_loss: 56.9410 (56.9410) time: 1.7040 data: 1.1370 max_mem: 10914
+Epoch: [9] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 7453.0591 (6893.8324) coarse_loss: 7378.9849 (6794.1515) fine_loss: 96.6351 (99.6809) time: 0.2277 data: 0.0001 max_mem: 10914
+Epoch: [9] Total time: 0:00:27 (0.2589 s / it 
+[[32mINFO] [[32m2023-10-20 10:50:52,504] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 7453.0591 (6893.8324) coarse_loss: 7378.9849 (6794.1515) fine_loss: 96.6351 (99.6809)[0m
+[[32mINFO] [[32m2023-10-20 10:50:55,031] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3487.1597 (4373.4049) coarse_loss: 3419.4712 (4272.4256) fine_loss: 89.7132 (100.9793)[0m
+Epoch: [10] [  0/107] eta: 0:02:05 lr: 0.00010000 losses: 6477.3345 (6477.3345) coarse_loss: 6356.2271 (6356.2271) fine_loss: 121.1076 (121.1076) time: 1.1733 data: 0.7828 max_mem: 10914
+Epoch: [10] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6998.7793 (6738.6938) coarse_loss: 6900.8594 (6645.4122) fine_loss: 96.9335 (93.2816) time: 0.2284 data: 0.0001 max_mem: 11045
+Epoch: [10] Total time: 0:00:27 (0.2566 s / it 
+[[32mINFO] [[32m2023-10-20 10:51:22,490] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6998.7793 (6738.6938) coarse_loss: 6900.8594 (6645.4122) fine_loss: 96.9335 (93.2816)[0m
+[[32mINFO] [[32m2023-10-20 10:51:25,148] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3367.5879 (3387.2179) coarse_loss: 3231.8777 (3298.1534) fine_loss: 86.2285 (89.0644)[0m
+Epoch: [11] [  0/107] eta: 0:02:23 lr: 0.00010000 losses: 6264.4424 (6264.4424) coarse_loss: 6157.6279 (6157.6279) fine_loss: 106.8144 (106.8144) time: 1.3412 data: 0.9986 max_mem: 11045
+Epoch: [11] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 7876.8579 (6895.3801) coarse_loss: 7771.9502 (6801.8960) fine_loss: 97.8190 (93.4841) time: 0.2343 data: 0.0001 max_mem: 11115
+Epoch: [11] Total time: 0:00:27 (0.2570 s / it 
+[[32mINFO] [[32m2023-10-20 10:51:52,903] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 7876.8579 (6895.3801) coarse_loss: 7771.9502 (6801.8960) fine_loss: 97.8190 (93.4841)[0m
+[[32mINFO] [[32m2023-10-20 10:51:55,589] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4906.9624 (4608.9705) coarse_loss: 4821.8354 (4513.7613) fine_loss: 85.1270 (95.2092)[0m
+Epoch: [12] [  0/107] eta: 0:02:19 lr: 0.00010000 losses: 9184.4990 (9184.4990) coarse_loss: 9098.2891 (9098.2891) fine_loss: 86.2096 (86.2096) time: 1.3071 data: 0.9677 max_mem: 11115
+Epoch: [12] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 5879.2876 (6453.5419) coarse_loss: 5793.8638 (6357.9602) fine_loss: 83.2040 (95.5817) time: 0.2343 data: 0.0001 max_mem: 11213
+Epoch: [12] Total time: 0:00:27 (0.2563 s / it 
+[[32mINFO] [[32m2023-10-20 10:52:23,015] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 5879.2876 (6453.5419) coarse_loss: 5793.8638 (6357.9602) fine_loss: 83.2040 (95.5817)[0m
+[[32mINFO] [[32m2023-10-20 10:52:26,002] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3569.9419 (4049.9363) coarse_loss: 3468.4836 (3941.6769) fine_loss: 101.4582 (108.2594)[0m
+Epoch: [13] [  0/107] eta: 0:02:06 lr: 0.00010000 losses: 8802.9775 (8802.9775) coarse_loss: 8697.8311 (8697.8311) fine_loss: 105.1467 (105.1467) time: 1.1824 data: 0.6956 max_mem: 11213
+Epoch: [13] [106/107] eta: 0:00:00 lr: 0.00010000 losses: 6830.3735 (6495.4081) coarse_loss: 6746.4365 (6405.8306) fine_loss: 88.3248 (89.5775) time: 0.2404 data: 0.0001 max_mem: 11325
+Epoch: [13] Total time: 0:00:27 (0.2606 s / it 
+[[32mINFO] [[32m2023-10-20 10:52:53,893] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00010000 losses: 6830.3735 (6495.4081) coarse_loss: 6746.4365 (6405.8306) fine_loss: 88.3248 (89.5775)[0m
+[[32mINFO] [[32m2023-10-20 10:52:56,672] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3611.9583 (3777.8270) coarse_loss: 3555.3394 (3694.6866) fine_loss: 76.8375 (83.1404)[0m
+Epoch: [14] [  0/107] eta: 0:02:19 lr: 0.00009999 losses: 5606.0024 (5606.0024) coarse_loss: 5488.6631 (5488.6631) fine_loss: 117.3391 (117.3391) time: 1.3030 data: 0.9063 max_mem: 11325
+Epoch: [14] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 7213.1338 (6384.6347) coarse_loss: 7137.0337 (6290.7949) fine_loss: 95.0834 (93.8398) time: 0.2496 data: 0.0001 max_mem: 11418
+Epoch: [14] Total time: 0:00:28 (0.2635 s / it 
+[[32mINFO] [[32m2023-10-20 10:53:24,864] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 7213.1338 (6384.6347) coarse_loss: 7137.0337 (6290.7949) fine_loss: 95.0834 (93.8398)[0m
+[[32mINFO] [[32m2023-10-20 10:53:27,546] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2955.1570 (3367.3286) coarse_loss: 2858.5913 (3271.1568) fine_loss: 89.7169 (96.1717)[0m
+Epoch: [15] [  0/107] eta: 0:02:19 lr: 0.00009999 losses: 9676.6338 (9676.6338) coarse_loss: 9560.4307 (9560.4307) fine_loss: 116.2027 (116.2027) time: 1.3080 data: 1.0061 max_mem: 11418
+Epoch: [15] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 5445.3711 (6319.2791) coarse_loss: 5358.0889 (6228.9063) fine_loss: 93.8158 (90.3728) time: 0.2282 data: 0.0001 max_mem: 11418
+Epoch: [15] Total time: 0:00:27 (0.2606 s / it 
+[[32mINFO] [[32m2023-10-20 10:53:55,685] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 5445.3711 (6319.2791) coarse_loss: 5358.0889 (6228.9063) fine_loss: 93.8158 (90.3728)[0m
+[[32mINFO] [[32m2023-10-20 10:53:58,402] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3609.1616 (3909.4764) coarse_loss: 3538.2026 (3818.8418) fine_loss: 88.7621 (90.6345)[0m
+Epoch: [16] [  0/107] eta: 0:02:26 lr: 0.00009999 losses: 8057.0259 (8057.0259) coarse_loss: 7996.8730 (7996.8730) fine_loss: 60.1529 (60.1529) time: 1.3650 data: 1.0201 max_mem: 11418
+Epoch: [16] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 6095.7520 (6482.0385) coarse_loss: 6009.9556 (6394.1635) fine_loss: 82.5544 (87.8750) time: 0.2424 data: 0.0001 max_mem: 11418
+Epoch: [16] Total time: 0:00:28 (0.2664 s / it 
+[[32mINFO] [[32m2023-10-20 10:54:26,910] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 6095.7520 (6482.0385) coarse_loss: 6009.9556 (6394.1635) fine_loss: 82.5544 (87.8750)[0m
+[[32mINFO] [[32m2023-10-20 10:54:29,732] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4872.5923 (4816.9267) coarse_loss: 4776.1948 (4728.8483) fine_loss: 88.2058 (88.0784)[0m
+Epoch: [17] [  0/107] eta: 0:02:16 lr: 0.00009999 losses: 7135.8584 (7135.8584) coarse_loss: 7050.5503 (7050.5503) fine_loss: 85.3083 (85.3083) time: 1.2762 data: 0.8471 max_mem: 11418
+Epoch: [17] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 6382.2896 (6567.9875) coarse_loss: 6268.5186 (6485.1990) fine_loss: 83.1460 (82.7885) time: 0.2439 data: 0.0001 max_mem: 11418
+Epoch: [17] Total time: 0:00:28 (0.2671 s / it 
+[[32mINFO] [[32m2023-10-20 10:54:58,317] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 6382.2896 (6567.9875) coarse_loss: 6268.5186 (6485.1990) fine_loss: 83.1460 (82.7885)[0m
+[[32mINFO] [[32m2023-10-20 10:55:01,093] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4492.5786 (4309.3839) coarse_loss: 4436.2100 (4238.1713) fine_loss: 56.3684 (71.2126)[0m
+Epoch: [18] [  0/107] eta: 0:02:19 lr: 0.00009999 losses: 4315.2173 (4315.2173) coarse_loss: 4185.7339 (4185.7339) fine_loss: 129.4836 (129.4836) time: 1.3045 data: 0.9830 max_mem: 11418
+Epoch: [18] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 5878.6445 (6179.2046) coarse_loss: 5788.9194 (6095.8735) fine_loss: 83.9675 (83.3311) time: 0.2435 data: 0.0001 max_mem: 11452
+Epoch: [18] Total time: 0:00:28 (0.2686 s / it 
+[[32mINFO] [[32m2023-10-20 10:55:29,838] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 5878.6445 (6179.2046) coarse_loss: 5788.9194 (6095.8735) fine_loss: 83.9675 (83.3311)[0m
+[[32mINFO] [[32m2023-10-20 10:55:32,778] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4608.0630 (4651.5703) coarse_loss: 4527.7334 (4570.3248) fine_loss: 77.8185 (81.2455)[0m
+Epoch: [19] [  0/107] eta: 0:02:20 lr: 0.00009999 losses: 5185.7134 (5185.7134) coarse_loss: 5101.5215 (5101.5215) fine_loss: 84.1921 (84.1921) time: 1.3123 data: 0.9724 max_mem: 11452
+Epoch: [19] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 6505.3818 (5863.4997) coarse_loss: 6419.6572 (5778.7436) fine_loss: 81.8669 (84.7561) time: 0.2458 data: 0.0001 max_mem: 11574
+Epoch: [19] Total time: 0:00:28 (0.2668 s / it 
+[[32mINFO] [[32m2023-10-20 10:56:01,329] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 6505.3818 (5863.4997) coarse_loss: 6419.6572 (5778.7436) fine_loss: 81.8669 (84.7561)[0m
+[[32mINFO] [[32m2023-10-20 10:56:04,005] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2879.5032 (3308.9572) coarse_loss: 2798.3223 (3228.5875) fine_loss: 64.4700 (80.3697)[0m
+Epoch: [20] [  0/107] eta: 0:02:09 lr: 0.00009999 losses: 7294.4346 (7294.4346) coarse_loss: 7196.4429 (7196.4429) fine_loss: 97.9918 (97.9918) time: 1.2097 data: 0.7386 max_mem: 11574
+Epoch: [20] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 5532.2573 (6263.8314) coarse_loss: 5458.7031 (6181.3409) fine_loss: 73.7782 (82.4905) time: 0.2492 data: 0.0001 max_mem: 11638
+Epoch: [20] Total time: 0:00:28 (0.2687 s / it 
+[[32mINFO] [[32m2023-10-20 10:56:32,997] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 5532.2573 (6263.8314) coarse_loss: 5458.7031 (6181.3409) fine_loss: 73.7782 (82.4905)[0m
+[[32mINFO] [[32m2023-10-20 10:56:35,816] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2901.6279 (3553.5054) coarse_loss: 2867.8979 (3472.2159) fine_loss: 78.9023 (81.2895)[0m
+Epoch: [21] [  0/107] eta: 0:02:25 lr: 0.00009999 losses: 9261.2646 (9261.2646) coarse_loss: 9197.2979 (9197.2979) fine_loss: 63.9671 (63.9671) time: 1.3572 data: 0.8749 max_mem: 11638
+Epoch: [21] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 4621.6616 (6253.8896) coarse_loss: 4566.7510 (6174.2866) fine_loss: 65.8526 (79.6030) time: 0.2533 data: 0.0001 max_mem: 11676
+Epoch: [21] Total time: 0:00:29 (0.2720 s / it 
+[[32mINFO] [[32m2023-10-20 10:57:04,917] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 4621.6616 (6253.8896) coarse_loss: 4566.7510 (6174.2866) fine_loss: 65.8526 (79.6030)[0m
+[[32mINFO] [[32m2023-10-20 10:57:07,718] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4258.9282 (4101.7408) coarse_loss: 4156.7280 (4030.5120) fine_loss: 69.9192 (71.2287)[0m
+Epoch: [22] [  0/107] eta: 0:02:31 lr: 0.00009999 losses: 8653.5117 (8653.5117) coarse_loss: 8577.0371 (8577.0371) fine_loss: 76.4747 (76.4747) time: 1.4114 data: 1.0344 max_mem: 11676
+Epoch: [22] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 6188.3496 (6016.8478) coarse_loss: 6123.3184 (5935.3416) fine_loss: 79.6032 (81.5061) time: 0.2494 data: 0.0001 max_mem: 11676
+Epoch: [22] Total time: 0:00:29 (0.2744 s / it 
+[[32mINFO] [[32m2023-10-20 10:57:37,079] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 6188.3496 (6016.8478) coarse_loss: 6123.3184 (5935.3416) fine_loss: 79.6032 (81.5061)[0m
+[[32mINFO] [[32m2023-10-20 10:57:40,157] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2916.6655 (3656.3445) coarse_loss: 2744.2671 (3577.7356) fine_loss: 63.7837 (78.6089)[0m
+Epoch: [23] [  0/107] eta: 0:02:25 lr: 0.00009999 losses: 10627.4561 (10627.4561) coarse_loss: 10547.7393 (10547.7393) fine_loss: 79.7170 (79.7170) time: 1.3564 data: 1.0016 max_mem: 11676
+Epoch: [23] [106/107] eta: 0:00:00 lr: 0.00009999 losses: 6819.6226 (6413.3730) coarse_loss: 6719.4092 (6333.0169) fine_loss: 66.2950 (80.3562) time: 0.2517 data: 0.0001 max_mem: 11676
+Epoch: [23] Total time: 0:00:29 (0.2736 s / it 
+[[32mINFO] [[32m2023-10-20 10:58:09,437] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009999 losses: 6819.6226 (6413.3730) coarse_loss: 6719.4092 (6333.0169) fine_loss: 66.2950 (80.3562)[0m
+[[32mINFO] [[32m2023-10-20 10:58:12,516] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3788.3010 (4037.5176) coarse_loss: 3656.8794 (3959.3093) fine_loss: 77.0409 (78.2083)[0m
+Epoch: [24] [  0/107] eta: 0:02:22 lr: 0.00009998 losses: 7353.1162 (7353.1162) coarse_loss: 7282.8770 (7282.8770) fine_loss: 70.2394 (70.2394) time: 1.3294 data: 0.9094 max_mem: 11676
+Epoch: [24] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 6977.2031 (6502.7744) coarse_loss: 6927.7983 (6426.8884) fine_loss: 69.0361 (75.8860) time: 0.2524 data: 0.0001 max_mem: 11801
+Epoch: [24] Total time: 0:00:29 (0.2741 s / it 
+[[32mINFO] [[32m2023-10-20 10:58:41,844] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 6977.2031 (6502.7744) coarse_loss: 6927.7983 (6426.8884) fine_loss: 69.0361 (75.8860)[0m
+[[32mINFO] [[32m2023-10-20 10:58:44,696] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4125.9429 (4020.8338) coarse_loss: 3995.3188 (3948.2561) fine_loss: 62.7242 (72.5777)[0m
+Epoch: [25] [  0/107] eta: 0:02:16 lr: 0.00009998 losses: 4702.9087 (4702.9087) coarse_loss: 4628.9951 (4628.9951) fine_loss: 73.9138 (73.9138) time: 1.2797 data: 0.8504 max_mem: 11801
+Epoch: [25] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 6624.9780 (6159.9520) coarse_loss: 6541.1807 (6078.0909) fine_loss: 73.0992 (81.8611) time: 0.2588 data: 0.0001 max_mem: 11801
+Epoch: [25] Total time: 0:00:29 (0.2736 s / it 
+[[32mINFO] [[32m2023-10-20 10:59:13,972] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 6624.9780 (6159.9520) coarse_loss: 6541.1807 (6078.0909) fine_loss: 73.0992 (81.8611)[0m
+[[32mINFO] [[32m2023-10-20 10:59:16,871] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4522.7915 (4466.8574) coarse_loss: 4468.6509 (4411.1419) fine_loss: 54.1406 (55.7156)[0m
+Epoch: [26] [  0/107] eta: 0:02:21 lr: 0.00009998 losses: 6569.3491 (6569.3491) coarse_loss: 6523.4048 (6523.4048) fine_loss: 45.9444 (45.9444) time: 1.3257 data: 0.9156 max_mem: 11801
+Epoch: [26] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 4473.4468 (5887.3094) coarse_loss: 4362.3730 (5810.7618) fine_loss: 79.7327 (76.5477) time: 0.2521 data: 0.0001 max_mem: 11801
+Epoch: [26] Total time: 0:00:29 (0.2757 s / it 
+[[32mINFO] [[32m2023-10-20 10:59:46,371] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 4473.4468 (5887.3094) coarse_loss: 4362.3730 (5810.7618) fine_loss: 79.7327 (76.5477)[0m
+[[32mINFO] [[32m2023-10-20 10:59:49,305] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4174.8218 (4455.4297) coarse_loss: 4093.5337 (4382.9629) fine_loss: 71.5808 (72.4668)[0m
+Epoch: [27] [  0/107] eta: 0:02:23 lr: 0.00009998 losses: 9586.2969 (9586.2969) coarse_loss: 9480.9297 (9480.9297) fine_loss: 105.3676 (105.3676) time: 1.3407 data: 0.9916 max_mem: 11801
+Epoch: [27] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 5792.1040 (6470.4286) coarse_loss: 5718.4072 (6394.3868) fine_loss: 73.8426 (76.0419) time: 0.2533 data: 0.0001 max_mem: 11801
+Epoch: [27] Total time: 0:00:30 (0.2832 s / it 
+[[32mINFO] [[32m2023-10-20 11:00:19,606] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 5792.1040 (6470.4286) coarse_loss: 5718.4072 (6394.3868) fine_loss: 73.8426 (76.0419)[0m
+[[32mINFO] [[32m2023-10-20 11:00:22,550] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3894.5491 (4586.1346) coarse_loss: 3805.0596 (4508.9449) fine_loss: 74.8935 (77.1897)[0m
+Epoch: [28] [  0/107] eta: 0:02:27 lr: 0.00009998 losses: 7896.0801 (7896.0801) coarse_loss: 7841.0000 (7841.0000) fine_loss: 55.0798 (55.0798) time: 1.3824 data: 1.0117 max_mem: 11801
+Epoch: [28] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 4954.4268 (6081.6453) coarse_loss: 4883.3281 (6005.1144) fine_loss: 65.3290 (76.5308) time: 0.2559 data: 0.0001 max_mem: 11830
+Epoch: [28] Total time: 0:00:29 (0.2802 s / it 
+[[32mINFO] [[32m2023-10-20 11:00:52,537] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 4954.4268 (6081.6453) coarse_loss: 4883.3281 (6005.1144) fine_loss: 65.3290 (76.5308)[0m
+[[32mINFO] [[32m2023-10-20 11:00:55,390] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2903.9795 (4064.7094) coarse_loss: 2819.9939 (3996.1080) fine_loss: 65.7159 (68.6015)[0m
+Epoch: [29] [  0/107] eta: 0:02:18 lr: 0.00009998 losses: 4843.3223 (4843.3223) coarse_loss: 4738.4351 (4738.4351) fine_loss: 104.8873 (104.8873) time: 1.2931 data: 0.9014 max_mem: 11830
+Epoch: [29] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 7093.1997 (6098.5592) coarse_loss: 7026.7949 (6024.5733) fine_loss: 72.4072 (73.9859) time: 0.2685 data: 0.0001 max_mem: 12116
+Epoch: [29] Total time: 0:00:30 (0.2814 s / it 
+[[32mINFO] [[32m2023-10-20 11:01:25,502] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 7093.1997 (6098.5592) coarse_loss: 7026.7949 (6024.5733) fine_loss: 72.4072 (73.9859)[0m
+[[32mINFO] [[32m2023-10-20 11:01:28,513] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3572.7668 (3698.0721) coarse_loss: 3523.6978 (3625.8360) fine_loss: 65.4403 (72.2361)[0m
+Epoch: [30] [  0/107] eta: 0:02:28 lr: 0.00009998 losses: 8007.6128 (8007.6128) coarse_loss: 7916.3760 (7916.3760) fine_loss: 91.2370 (91.2370) time: 1.3839 data: 1.0172 max_mem: 12116
+Epoch: [30] [106/107] eta: 0:00:00 lr: 0.00009998 losses: 6035.0356 (6148.5493) coarse_loss: 5931.3213 (6072.9293) fine_loss: 72.4868 (75.6201) time: 0.2597 data: 0.0001 max_mem: 12116
+Epoch: [30] Total time: 0:00:30 (0.2815 s / it 
+[[32mINFO] [[32m2023-10-20 11:01:58,636] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009998 losses: 6035.0356 (6148.5493) coarse_loss: 5931.3213 (6072.9293) fine_loss: 72.4868 (75.6201)[0m
+[[32mINFO] [[32m2023-10-20 11:02:01,457] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2305.3333 (3227.9651) coarse_loss: 2231.4829 (3137.4691) fine_loss: 90.1840 (90.4960)[0m
+Epoch: [31] [  0/107] eta: 0:02:13 lr: 0.00009997 losses: 6003.5605 (6003.5605) coarse_loss: 5948.8887 (5948.8887) fine_loss: 54.6720 (54.6720) time: 1.2466 data: 0.8137 max_mem: 12116
+Epoch: [31] [106/107] eta: 0:00:00 lr: 0.00009997 losses: 5584.3311 (6307.4745) coarse_loss: 5502.7900 (6232.5620) fine_loss: 71.6878 (74.9124) time: 0.2637 data: 0.0001 max_mem: 12116
+Epoch: [31] Total time: 0:00:30 (0.2842 s / it 
+[[32mINFO] [[32m2023-10-20 11:02:32,112] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009997 losses: 5584.3311 (6307.4745) coarse_loss: 5502.7900 (6232.5620) fine_loss: 71.6878 (74.9124)[0m
+[[32mINFO] [[32m2023-10-20 11:02:34,998] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2602.2092 (2986.5640) coarse_loss: 2541.4551 (2925.4403) fine_loss: 62.2313 (61.1236)[0m
+Epoch: [32] [  0/107] eta: 0:02:21 lr: 0.00009997 losses: 6030.2622 (6030.2622) coarse_loss: 5958.1128 (5958.1128) fine_loss: 72.1495 (72.1495) time: 1.3268 data: 0.9811 max_mem: 12116
+Epoch: [32] [106/107] eta: 0:00:00 lr: 0.00009997 losses: 5528.1494 (6144.3695) coarse_loss: 5468.7573 (6069.6576) fine_loss: 68.6072 (74.7119) time: 0.2634 data: 0.0001 max_mem: 12116
+Epoch: [32] Total time: 0:00:30 (0.2838 s / it 
+[[32mINFO] [[32m2023-10-20 11:03:05,599] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009997 losses: 5528.1494 (6144.3695) coarse_loss: 5468.7573 (6069.6576) fine_loss: 68.6072 (74.7119)[0m
+[[32mINFO] [[32m2023-10-20 11:03:08,606] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4041.3269 (4047.2342) coarse_loss: 3970.5676 (3969.6059) fine_loss: 56.6521 (77.6283)[0m
+Epoch: [33] [  0/107] eta: 0:02:21 lr: 0.00009997 losses: 7742.6851 (7742.6851) coarse_loss: 7645.9248 (7645.9248) fine_loss: 96.7602 (96.7602) time: 1.3251 data: 0.9611 max_mem: 12116
+Epoch: [33] [106/107] eta: 0:00:00 lr: 0.00009997 losses: 5012.0254 (5772.6488) coarse_loss: 4950.5420 (5699.4372) fine_loss: 65.9063 (73.2116) time: 0.2718 data: 0.0001 max_mem: 12116
+Epoch: [33] Total time: 0:00:30 (0.2839 s / it 
+[[32mINFO] [[32m2023-10-20 11:03:38,985] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009997 losses: 5012.0254 (5772.6488) coarse_loss: 4950.5420 (5699.4372) fine_loss: 65.9063 (73.2116)[0m
+[[32mINFO] [[32m2023-10-20 11:03:41,883] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2679.6704 (3227.2949) coarse_loss: 2585.5818 (3143.5903) fine_loss: 75.1483 (83.7046)[0m
+Epoch: [34] [  0/107] eta: 0:02:14 lr: 0.00009997 losses: 7212.0659 (7212.0659) coarse_loss: 7114.5361 (7114.5361) fine_loss: 97.5298 (97.5298) time: 1.2613 data: 0.9195 max_mem: 12116
+Epoch: [34] [106/107] eta: 0:00:00 lr: 0.00009997 losses: 6398.5649 (6008.5109) coarse_loss: 6324.6187 (5935.1459) fine_loss: 73.8529 (73.3651) time: 0.2641 data: 0.0001 max_mem: 12116
+Epoch: [34] Total time: 0:00:30 (0.2853 s / it 
+[[32mINFO] [[32m2023-10-20 11:04:12,412] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009997 losses: 6398.5649 (6008.5109) coarse_loss: 6324.6187 (5935.1459) fine_loss: 73.8529 (73.3651)[0m
+[[32mINFO] [[32m2023-10-20 11:04:15,459] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3386.5261 (3636.6533) coarse_loss: 3342.9663 (3581.2839) fine_loss: 50.3080 (55.3693)[0m
+Epoch: [35] [  0/107] eta: 0:02:22 lr: 0.00009997 losses: 6143.3706 (6143.3706) coarse_loss: 6083.3691 (6083.3691) fine_loss: 60.0013 (60.0013) time: 1.3289 data: 0.9959 max_mem: 12116
+Epoch: [35] [106/107] eta: 0:00:00 lr: 0.00009997 losses: 5412.1543 (5884.3521) coarse_loss: 5347.0498 (5812.9350) fine_loss: 68.6580 (71.4171) time: 0.2637 data: 0.0001 max_mem: 12116
+Epoch: [35] Total time: 0:00:30 (0.2853 s / it 
+[[32mINFO] [[32m2023-10-20 11:04:45,989] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009997 losses: 5412.1543 (5884.3521) coarse_loss: 5347.0498 (5812.9350) fine_loss: 68.6580 (71.4171)[0m
+[[32mINFO] [[32m2023-10-20 11:04:48,908] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3285.9519 (3450.9225) coarse_loss: 3243.3740 (3392.1625) fine_loss: 47.8554 (58.7600)[0m
+Epoch: [36] [  0/107] eta: 0:02:17 lr: 0.00009996 losses: 6092.3848 (6092.3848) coarse_loss: 6049.6821 (6049.6821) fine_loss: 42.7025 (42.7025) time: 1.2819 data: 0.8780 max_mem: 12116
+Epoch: [36] [106/107] eta: 0:00:00 lr: 0.00009996 losses: 4572.6323 (5491.8795) coarse_loss: 4529.2788 (5418.1809) fine_loss: 61.9216 (73.6986) time: 0.2639 data: 0.0001 max_mem: 12196
+Epoch: [36] Total time: 0:00:30 (0.2852 s / it 
+[[32mINFO] [[32m2023-10-20 11:05:19,423] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009996 losses: 4572.6323 (5491.8795) coarse_loss: 4529.2788 (5418.1809) fine_loss: 61.9216 (73.6986)[0m
+[[32mINFO] [[32m2023-10-20 11:05:22,462] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3263.6965 (3722.9766) coarse_loss: 3217.0542 (3659.9105) fine_loss: 48.7069 (63.0661)[0m
+Epoch: [37] [  0/107] eta: 0:02:12 lr: 0.00009996 losses: 5922.0972 (5922.0972) coarse_loss: 5858.2500 (5858.2500) fine_loss: 63.8474 (63.8474) time: 1.2374 data: 0.7897 max_mem: 12196
+Epoch: [37] [106/107] eta: 0:00:00 lr: 0.00009996 losses: 6077.4565 (5787.0431) coarse_loss: 6016.3115 (5713.1213) fine_loss: 65.2847 (73.9218) time: 0.2682 data: 0.0001 max_mem: 12196
+Epoch: [37] Total time: 0:00:30 (0.2816 s / it 
+[[32mINFO] [[32m2023-10-20 11:05:52,600] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009996 losses: 6077.4565 (5787.0431) coarse_loss: 6016.3115 (5713.1213) fine_loss: 65.2847 (73.9218)[0m
+[[32mINFO] [[32m2023-10-20 11:05:55,575] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3554.7427 (4039.3970) coarse_loss: 3464.0571 (3974.0654) fine_loss: 67.0577 (65.3316)[0m
+Epoch: [38] [  0/107] eta: 0:02:26 lr: 0.00009996 losses: 6752.0933 (6752.0933) coarse_loss: 6702.1494 (6702.1494) fine_loss: 49.9436 (49.9436) time: 1.3702 data: 0.9337 max_mem: 12196
+Epoch: [38] [106/107] eta: 0:00:00 lr: 0.00009996 losses: 6525.6050 (5946.6070) coarse_loss: 6484.5767 (5873.1684) fine_loss: 75.9771 (73.4386) time: 0.2693 data: 0.0001 max_mem: 12321
+Epoch: [38] Total time: 0:00:30 (0.2889 s / it 
+[[32mINFO] [[32m2023-10-20 11:06:26,490] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009996 losses: 6525.6050 (5946.6070) coarse_loss: 6484.5767 (5873.1684) fine_loss: 75.9771 (73.4386)[0m
+[[32mINFO] [[32m2023-10-20 11:06:29,600] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4318.6694 (4397.1951) coarse_loss: 4234.0322 (4324.8036) fine_loss: 62.1709 (72.3915)[0m
+Epoch: [39] [  0/107] eta: 0:02:21 lr: 0.00009996 losses: 4271.6523 (4271.6523) coarse_loss: 4191.3926 (4191.3926) fine_loss: 80.2597 (80.2597) time: 1.3247 data: 0.9495 max_mem: 12321
+Epoch: [39] [106/107] eta: 0:00:00 lr: 0.00009996 losses: 5852.3228 (5403.1498) coarse_loss: 5793.5991 (5330.8067) fine_loss: 71.4895 (72.3431) time: 0.2626 data: 0.0001 max_mem: 12321
+Epoch: [39] Total time: 0:00:30 (0.2822 s / it 
+[[32mINFO] [[32m2023-10-20 11:06:59,799] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009996 losses: 5852.3228 (5403.1498) coarse_loss: 5793.5991 (5330.8067) fine_loss: 71.4895 (72.3431)[0m
+[[32mINFO] [[32m2023-10-20 11:07:02,843] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3353.9250 (2808.7800) coarse_loss: 3262.5815 (2734.3445) fine_loss: 58.4417 (74.4355)[0m
+Epoch: [40] [  0/107] eta: 0:02:24 lr: 0.00009996 losses: 5985.3057 (5985.3057) coarse_loss: 5871.1431 (5871.1431) fine_loss: 114.1627 (114.1627) time: 1.3515 data: 1.0074 max_mem: 12321
+Epoch: [40] [106/107] eta: 0:00:00 lr: 0.00009996 losses: 4427.8789 (5410.7357) coarse_loss: 4373.3135 (5336.7296) fine_loss: 64.0001 (74.0060) time: 0.2617 data: 0.0001 max_mem: 12321
+Epoch: [40] Total time: 0:00:30 (0.2849 s / it 
+[[32mINFO] [[32m2023-10-20 11:07:33,574] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009996 losses: 4427.8789 (5410.7357) coarse_loss: 4373.3135 (5336.7296) fine_loss: 64.0001 (74.0060)[0m
+[[32mINFO] [[32m2023-10-20 11:07:36,645] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3591.7778 (4272.4509) coarse_loss: 3556.9814 (4196.1762) fine_loss: 57.1923 (76.2747)[0m
+Epoch: [41] [  0/107] eta: 0:02:13 lr: 0.00009995 losses: 5142.6299 (5142.6299) coarse_loss: 5062.1553 (5062.1553) fine_loss: 80.4748 (80.4748) time: 1.2456 data: 0.7446 max_mem: 12321
+Epoch: [41] [106/107] eta: 0:00:00 lr: 0.00009995 losses: 4839.6392 (5655.5090) coarse_loss: 4728.0854 (5584.9700) fine_loss: 62.4200 (70.5391) time: 0.2807 data: 0.0001 max_mem: 12321
+Epoch: [41] Total time: 0:00:30 (0.2884 s / it 
+[[32mINFO] [[32m2023-10-20 11:08:07,506] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009995 losses: 4839.6392 (5655.5090) coarse_loss: 4728.0854 (5584.9700) fine_loss: 62.4200 (70.5391)[0m
+[[32mINFO] [[32m2023-10-20 11:08:10,479] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3282.6941 (3569.3363) coarse_loss: 3175.9941 (3497.9969) fine_loss: 62.3919 (71.3393)[0m
+Epoch: [42] [  0/107] eta: 0:02:28 lr: 0.00009995 losses: 3768.2195 (3768.2195) coarse_loss: 3708.6375 (3708.6375) fine_loss: 59.5820 (59.5820) time: 1.3862 data: 1.0639 max_mem: 12321
+Epoch: [42] [106/107] eta: 0:00:00 lr: 0.00009995 losses: 5488.5063 (5806.7745) coarse_loss: 5403.0732 (5739.8074) fine_loss: 63.8303 (66.9671) time: 0.2710 data: 0.0001 max_mem: 12321
+Epoch: [42] Total time: 0:00:31 (0.2907 s / it 
+[[32mINFO] [[32m2023-10-20 11:08:41,583] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009995 losses: 5488.5063 (5806.7745) coarse_loss: 5403.0732 (5739.8074) fine_loss: 63.8303 (66.9671)[0m
+[[32mINFO] [[32m2023-10-20 11:08:44,340] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2166.9944 (2338.0614) coarse_loss: 2064.0933 (2265.3411) fine_loss: 66.8134 (72.7203)[0m
+Epoch: [43] [  0/107] eta: 0:02:22 lr: 0.00009995 losses: 7257.0312 (7257.0312) coarse_loss: 7208.1191 (7208.1191) fine_loss: 48.9121 (48.9121) time: 1.3331 data: 0.9833 max_mem: 12321
+Epoch: [43] [106/107] eta: 0:00:00 lr: 0.00009995 losses: 6173.3320 (5933.0140) coarse_loss: 6116.1982 (5862.7861) fine_loss: 59.2884 (70.2279) time: 0.2661 data: 0.0001 max_mem: 12321
+Epoch: [43] Total time: 0:00:30 (0.2870 s / it 
+[[32mINFO] [[32m2023-10-20 11:09:15,293] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009995 losses: 6173.3320 (5933.0140) coarse_loss: 6116.1982 (5862.7861) fine_loss: 59.2884 (70.2279)[0m
+[[32mINFO] [[32m2023-10-20 11:09:18,238] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3540.6868 (3619.3858) coarse_loss: 3492.6731 (3550.6310) fine_loss: 64.3915 (68.7549)[0m
+Epoch: [44] [  0/107] eta: 0:02:10 lr: 0.00009995 losses: 3609.4004 (3609.4004) coarse_loss: 3515.5742 (3515.5742) fine_loss: 93.8261 (93.8261) time: 1.2187 data: 0.7929 max_mem: 12321
+Epoch: [44] [106/107] eta: 0:00:00 lr: 0.00009995 losses: 5516.0186 (5797.0292) coarse_loss: 5444.5938 (5726.9887) fine_loss: 64.2034 (70.0405) time: 0.2592 data: 0.0001 max_mem: 12450
+Epoch: [44] Total time: 0:00:30 (0.2876 s / it 
+[[32mINFO] [[32m2023-10-20 11:09:49,016] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009995 losses: 5516.0186 (5797.0292) coarse_loss: 5444.5938 (5726.9887) fine_loss: 64.2034 (70.0405)[0m
+[[32mINFO] [[32m2023-10-20 11:09:52,097] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3322.1577 (3500.6303) coarse_loss: 3274.2332 (3439.0236) fine_loss: 54.6657 (61.6067)[0m
+Epoch: [45] [  0/107] eta: 0:02:19 lr: 0.00009994 losses: 5476.9326 (5476.9326) coarse_loss: 5435.3857 (5435.3857) fine_loss: 41.5470 (41.5470) time: 1.3062 data: 0.9665 max_mem: 12450
+Epoch: [45] [106/107] eta: 0:00:00 lr: 0.00009994 losses: 5243.5645 (5474.8319) coarse_loss: 5200.7158 (5408.0003) fine_loss: 53.7728 (66.8316) time: 0.2667 data: 0.0001 max_mem: 12450
+Epoch: [45] Total time: 0:00:30 (0.2871 s / it 
+[[32mINFO] [[32m2023-10-20 11:10:22,820] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009994 losses: 5243.5645 (5474.8319) coarse_loss: 5200.7158 (5408.0003) fine_loss: 53.7728 (66.8316)[0m
+[[32mINFO] [[32m2023-10-20 11:10:25,792] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2542.8704 (3214.6444) coarse_loss: 2433.5229 (3131.8158) fine_loss: 76.7868 (82.8287)[0m
+Epoch: [46] [  0/107] eta: 0:02:07 lr: 0.00009994 losses: 4310.9453 (4310.9453) coarse_loss: 4252.1143 (4252.1143) fine_loss: 58.8310 (58.8310) time: 1.1947 data: 0.7265 max_mem: 12450
+Epoch: [46] [106/107] eta: 0:00:00 lr: 0.00009994 losses: 4734.6309 (5765.0158) coarse_loss: 4666.6973 (5696.5713) fine_loss: 73.9749 (68.4445) time: 0.2595 data: 0.0001 max_mem: 12450
+Epoch: [46] Total time: 0:00:30 (0.2882 s / it 
+[[32mINFO] [[32m2023-10-20 11:10:56,631] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009994 losses: 4734.6309 (5765.0158) coarse_loss: 4666.6973 (5696.5713) fine_loss: 73.9749 (68.4445)[0m
+[[32mINFO] [[32m2023-10-20 11:10:59,794] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3868.1240 (4534.4435) coarse_loss: 3801.4839 (4466.7931) fine_loss: 59.2129 (67.6503)[0m
+Epoch: [47] [  0/107] eta: 0:02:18 lr: 0.00009994 losses: 5141.3848 (5141.3848) coarse_loss: 5070.4932 (5070.4932) fine_loss: 70.8914 (70.8914) time: 1.2942 data: 0.9040 max_mem: 12450
+Epoch: [47] [106/107] eta: 0:00:00 lr: 0.00009994 losses: 5268.8906 (5818.5259) coarse_loss: 5218.6631 (5751.0019) fine_loss: 64.9263 (67.5240) time: 0.2740 data: 0.0001 max_mem: 12450
+Epoch: [47] Total time: 0:00:31 (0.2923 s / it 
+[[32mINFO] [[32m2023-10-20 11:11:31,072] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009994 losses: 5268.8906 (5818.5259) coarse_loss: 5218.6631 (5751.0019) fine_loss: 64.9263 (67.5240)[0m
+[[32mINFO] [[32m2023-10-20 11:11:34,216] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3070.2380 (3608.3195) coarse_loss: 3041.2666 (3553.9612) fine_loss: 44.4174 (54.3584)[0m
+Epoch: [48] [  0/107] eta: 0:02:19 lr: 0.00009994 losses: 6079.4341 (6079.4341) coarse_loss: 5971.5322 (5971.5322) fine_loss: 107.9018 (107.9018) time: 1.3044 data: 0.9831 max_mem: 12450
+Epoch: [48] [106/107] eta: 0:00:00 lr: 0.00009994 losses: 5058.1484 (5602.5988) coarse_loss: 4973.7686 (5532.4817) fine_loss: 67.6313 (70.1170) time: 0.2726 data: 0.0001 max_mem: 12450
+Epoch: [48] Total time: 0:00:30 (0.2896 s / it 
+[[32mINFO] [[32m2023-10-20 11:12:05,200] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009994 losses: 5058.1484 (5602.5988) coarse_loss: 4973.7686 (5532.4817) fine_loss: 67.6313 (70.1170)[0m
+[[32mINFO] [[32m2023-10-20 11:12:07,913] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1988.8274 (2114.6522) coarse_loss: 1864.5452 (2047.7928) fine_loss: 48.2699 (66.8594)[0m
+Epoch: [49] [  0/107] eta: 0:02:17 lr: 0.00009993 losses: 3718.9075 (3718.9075) coarse_loss: 3631.4937 (3631.4937) fine_loss: 87.4138 (87.4138) time: 1.2851 data: 0.9831 max_mem: 12450
+Epoch: [49] [106/107] eta: 0:00:00 lr: 0.00009993 losses: 5949.3794 (5687.3516) coarse_loss: 5918.9995 (5618.5733) fine_loss: 60.7463 (68.7783) time: 0.2875 data: 0.0001 max_mem: 12558
+Epoch: [49] Total time: 0:00:31 (0.2931 s / it 
+[[32mINFO] [[32m2023-10-20 11:12:39,515] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009993 losses: 5949.3794 (5687.3516) coarse_loss: 5918.9995 (5618.5733) fine_loss: 60.7463 (68.7783)[0m
+[[32mINFO] [[32m2023-10-20 11:12:42,696] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3450.9656 (3933.3383) coarse_loss: 3397.9604 (3867.6108) fine_loss: 52.4299 (65.7276)[0m
+Epoch: [50] [  0/107] eta: 0:02:26 lr: 0.00009993 losses: 4668.0010 (4668.0010) coarse_loss: 4624.5898 (4624.5898) fine_loss: 43.4113 (43.4113) time: 1.3729 data: 1.0160 max_mem: 12558
+Epoch: [50] [106/107] eta: 0:00:00 lr: 0.00009993 losses: 4622.9062 (5726.7954) coarse_loss: 4524.6533 (5660.2979) fine_loss: 68.6896 (66.4975) time: 0.2698 data: 0.0001 max_mem: 12558
+Epoch: [50] Total time: 0:00:31 (0.2942 s / it 
+[[32mINFO] [[32m2023-10-20 11:13:14,182] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009993 losses: 4622.9062 (5726.7954) coarse_loss: 4524.6533 (5660.2979) fine_loss: 68.6896 (66.4975)[0m
+[[32mINFO] [[32m2023-10-20 11:13:17,202] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3992.1985 (4174.4172) coarse_loss: 3899.9829 (4108.3898) fine_loss: 56.6931 (66.0274)[0m
+Epoch: [51] [  0/107] eta: 0:02:27 lr: 0.00009993 losses: 6592.0034 (6592.0034) coarse_loss: 6549.7471 (6549.7471) fine_loss: 42.2561 (42.2561) time: 1.3812 data: 0.9436 max_mem: 12558
+Epoch: [51] [106/107] eta: 0:00:00 lr: 0.00009993 losses: 4742.4072 (5365.1215) coarse_loss: 4621.1143 (5298.8971) fine_loss: 73.7935 (66.2244) time: 0.2659 data: 0.0001 max_mem: 12558
+Epoch: [51] Total time: 0:00:30 (0.2882 s / it 
+[[32mINFO] [[32m2023-10-20 11:13:48,042] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009993 losses: 4742.4072 (5365.1215) coarse_loss: 4621.1143 (5298.8971) fine_loss: 73.7935 (66.2244)[0m
+[[32mINFO] [[32m2023-10-20 11:13:50,998] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2766.2122 (2850.1862) coarse_loss: 2663.3740 (2774.3359) fine_loss: 76.5074 (75.8503)[0m
+Epoch: [52] [  0/107] eta: 0:02:28 lr: 0.00009993 losses: 7036.8569 (7036.8569) coarse_loss: 6993.9214 (6993.9214) fine_loss: 42.9356 (42.9356) time: 1.3920 data: 0.9977 max_mem: 12558
+Epoch: [52] [106/107] eta: 0:00:00 lr: 0.00009993 losses: 4989.4932 (5523.5579) coarse_loss: 4943.1372 (5455.2035) fine_loss: 66.1144 (68.3544) time: 0.2650 data: 0.0001 max_mem: 12558
+Epoch: [52] Total time: 0:00:31 (0.2920 s / it 
+[[32mINFO] [[32m2023-10-20 11:14:22,244] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009993 losses: 4989.4932 (5523.5579) coarse_loss: 4943.1372 (5455.2035) fine_loss: 66.1144 (68.3544)[0m
+[[32mINFO] [[32m2023-10-20 11:14:25,295] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3656.7407 (3932.1042) coarse_loss: 3573.0537 (3860.5055) fine_loss: 65.2933 (71.5987)[0m
+Epoch: [53] [  0/107] eta: 0:02:28 lr: 0.00009992 losses: 8829.6123 (8829.6123) coarse_loss: 8757.1357 (8757.1357) fine_loss: 72.4762 (72.4762) time: 1.3866 data: 1.0217 max_mem: 12558
+Epoch: [53] [106/107] eta: 0:00:00 lr: 0.00009992 losses: 5445.7441 (5549.9327) coarse_loss: 5335.4268 (5482.9633) fine_loss: 74.2449 (66.9694) time: 0.2636 data: 0.0001 max_mem: 12558
+Epoch: [53] Total time: 0:00:31 (0.2925 s / it 
+[[32mINFO] [[32m2023-10-20 11:14:56,592] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009992 losses: 5445.7441 (5549.9327) coarse_loss: 5335.4268 (5482.9633) fine_loss: 74.2449 (66.9694)[0m
+[[32mINFO] [[32m2023-10-20 11:14:59,656] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2845.0178 (3155.3830) coarse_loss: 2782.5693 (3074.8449) fine_loss: 67.8853 (80.5382)[0m
+Epoch: [54] [  0/107] eta: 0:02:16 lr: 0.00009992 losses: 5074.0278 (5074.0278) coarse_loss: 5004.3174 (5004.3174) fine_loss: 69.7103 (69.7103) time: 1.2793 data: 0.9332 max_mem: 12558
+Epoch: [54] [106/107] eta: 0:00:00 lr: 0.00009992 losses: 4146.6299 (5589.9058) coarse_loss: 4021.6394 (5523.5745) fine_loss: 57.7930 (66.3313) time: 0.2732 data: 0.0001 max_mem: 12558
+Epoch: [54] Total time: 0:00:31 (0.2933 s / it 
+[[32mINFO] [[32m2023-10-20 11:15:31,043] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009992 losses: 4146.6299 (5589.9058) coarse_loss: 4021.6394 (5523.5745) fine_loss: 57.7930 (66.3313)[0m
+[[32mINFO] [[32m2023-10-20 11:15:34,431] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3799.6064 (4147.7145) coarse_loss: 3747.7927 (4085.6678) fine_loss: 63.5804 (62.0467)[0m
+Epoch: [55] [  0/107] eta: 0:02:32 lr: 0.00009992 losses: 5268.3052 (5268.3052) coarse_loss: 5196.2285 (5196.2285) fine_loss: 72.0766 (72.0766) time: 1.4214 data: 0.9855 max_mem: 12558
+Epoch: [55] [106/107] eta: 0:00:00 lr: 0.00009992 losses: 5425.2319 (5948.6078) coarse_loss: 5391.6968 (5882.4289) fine_loss: 65.6446 (66.1789) time: 0.2723 data: 0.0001 max_mem: 12725
+Epoch: [55] Total time: 0:00:32 (0.3071 s / it 
+[[32mINFO] [[32m2023-10-20 11:16:07,299] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009992 losses: 5425.2319 (5948.6078) coarse_loss: 5391.6968 (5882.4289) fine_loss: 65.6446 (66.1789)[0m
+[[32mINFO] [[32m2023-10-20 11:16:10,388] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3095.0864 (3692.5314) coarse_loss: 3014.0552 (3627.7839) fine_loss: 51.4955 (64.7475)[0m
+Epoch: [56] [  0/107] eta: 0:02:26 lr: 0.00009991 losses: 5154.6226 (5154.6226) coarse_loss: 5124.4141 (5124.4141) fine_loss: 30.2084 (30.2084) time: 1.3662 data: 0.7072 max_mem: 12725
+Epoch: [56] [106/107] eta: 0:00:00 lr: 0.00009991 losses: 6099.3643 (5699.6224) coarse_loss: 6064.2920 (5634.5634) fine_loss: 65.2158 (65.0591) time: 0.2742 data: 0.0001 max_mem: 12757
+Epoch: [56] Total time: 0:00:31 (0.2983 s / it 
+[[32mINFO] [[32m2023-10-20 11:16:42,309] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009991 losses: 6099.3643 (5699.6224) coarse_loss: 6064.2920 (5634.5634) fine_loss: 65.2158 (65.0591)[0m
+[[32mINFO] [[32m2023-10-20 11:16:45,363] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2682.1062 (3089.8165) coarse_loss: 2625.1201 (3031.3855) fine_loss: 49.6056 (58.4310)[0m
+Epoch: [57] [  0/107] eta: 0:02:18 lr: 0.00009991 losses: 4909.1973 (4909.1973) coarse_loss: 4820.5601 (4820.5601) fine_loss: 88.6372 (88.6372) time: 1.2928 data: 0.8295 max_mem: 12757
+Epoch: [57] [106/107] eta: 0:00:00 lr: 0.00009991 losses: 4206.6934 (5322.6707) coarse_loss: 4120.9126 (5252.5619) fine_loss: 62.9573 (70.1088) time: 0.2807 data: 0.0001 max_mem: 12757
+Epoch: [57] Total time: 0:00:31 (0.2964 s / it 
+[[32mINFO] [[32m2023-10-20 11:17:17,080] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009991 losses: 4206.6934 (5322.6707) coarse_loss: 4120.9126 (5252.5619) fine_loss: 62.9573 (70.1088)[0m
+[[32mINFO] [[32m2023-10-20 11:17:20,294] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3737.6187 (3834.0015) coarse_loss: 3661.3806 (3772.8623) fine_loss: 58.3433 (61.1392)[0m
+Epoch: [58] [  0/107] eta: 0:02:37 lr: 0.00009991 losses: 4661.8081 (4661.8081) coarse_loss: 4596.0757 (4596.0757) fine_loss: 65.7324 (65.7324) time: 1.4698 data: 1.0164 max_mem: 12757
+Epoch: [58] [106/107] eta: 0:00:00 lr: 0.00009991 losses: 4531.7578 (5596.3051) coarse_loss: 4476.6660 (5528.3697) fine_loss: 65.4660 (67.9354) time: 0.2658 data: 0.0001 max_mem: 12757
+Epoch: [58] Total time: 0:00:32 (0.2997 s / it 
+[[32mINFO] [[32m2023-10-20 11:17:52,363] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009991 losses: 4531.7578 (5596.3051) coarse_loss: 4476.6660 (5528.3697) fine_loss: 65.4660 (67.9354)[0m
+[[32mINFO] [[32m2023-10-20 11:17:55,622] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3264.4551 (3646.2816) coarse_loss: 3200.2791 (3590.0633) fine_loss: 50.7167 (56.2183)[0m
+Epoch: [59] [  0/107] eta: 0:02:22 lr: 0.00009990 losses: 9005.6191 (9005.6191) coarse_loss: 8959.7881 (8959.7881) fine_loss: 45.8306 (45.8306) time: 1.3343 data: 0.8532 max_mem: 12757
+Epoch: [59] [106/107] eta: 0:00:00 lr: 0.00009990 losses: 6286.8188 (5501.4163) coarse_loss: 6220.2139 (5433.5020) fine_loss: 70.6630 (67.9142) time: 0.2786 data: 0.0001 max_mem: 12757
+Epoch: [59] Total time: 0:00:31 (0.2984 s / it 
+[[32mINFO] [[32m2023-10-20 11:18:27,558] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009990 losses: 6286.8188 (5501.4163) coarse_loss: 6220.2139 (5433.5020) fine_loss: 70.6630 (67.9142)[0m
+[[32mINFO] [[32m2023-10-20 11:18:30,593] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3142.7947 (2967.3712) coarse_loss: 3043.4453 (2887.9251) fine_loss: 54.3218 (79.4461)[0m
+Epoch: [60] [  0/107] eta: 0:02:05 lr: 0.00009990 losses: 371.1550 (371.1550) coarse_loss: 39.2665 (39.2665) fine_loss: 331.8885 (331.8885) time: 1.1705 data: 0.7202 max_mem: 12757
+Epoch: [60] [106/107] eta: 0:00:00 lr: 0.00009990 losses: 4586.3501 (4940.0054) coarse_loss: 4520.6221 (4869.5559) fine_loss: 65.7280 (70.4495) time: 0.2682 data: 0.0001 max_mem: 12757
+Epoch: [60] Total time: 0:00:31 (0.2987 s / it 
+[[32mINFO] [[32m2023-10-20 11:19:02,559] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009990 losses: 4586.3501 (4940.0054) coarse_loss: 4520.6221 (4869.5559) fine_loss: 65.7280 (70.4495)[0m
+[[32mINFO] [[32m2023-10-20 11:19:05,733] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2673.9937 (3382.3896) coarse_loss: 2645.1616 (3318.2179) fine_loss: 48.9034 (64.1717)[0m
+Epoch: [61] [  0/107] eta: 0:02:31 lr: 0.00009990 losses: 2597.2534 (2597.2534) coarse_loss: 2554.0410 (2554.0410) fine_loss: 43.2124 (43.2124) time: 1.4188 data: 1.0551 max_mem: 12757
+Epoch: [61] [106/107] eta: 0:00:00 lr: 0.00009990 losses: 5201.5625 (5380.8359) coarse_loss: 5129.4736 (5312.8410) fine_loss: 67.5928 (67.9949) time: 0.2791 data: 0.0001 max_mem: 12832
+Epoch: [61] Total time: 0:00:32 (0.3048 s / it 
+[[32mINFO] [[32m2023-10-20 11:19:38,350] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009990 losses: 5201.5625 (5380.8359) coarse_loss: 5129.4736 (5312.8410) fine_loss: 67.5928 (67.9949)[0m
+[[32mINFO] [[32m2023-10-20 11:19:41,695] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3926.3025 (3492.8708) coarse_loss: 3883.2800 (3430.9885) fine_loss: 48.2045 (61.8823)[0m
+Epoch: [62] [  0/107] eta: 0:02:32 lr: 0.00009989 losses: 6589.2822 (6589.2822) coarse_loss: 6518.7520 (6518.7520) fine_loss: 70.5303 (70.5303) time: 1.4219 data: 1.0243 max_mem: 12832
+Epoch: [62] [106/107] eta: 0:00:00 lr: 0.00009989 losses: 6348.3970 (5984.2718) coarse_loss: 6302.2363 (5919.5359) fine_loss: 60.0684 (64.7359) time: 0.2757 data: 0.0001 max_mem: 12832
+Epoch: [62] Total time: 0:00:33 (0.3102 s / it 
+[[32mINFO] [[32m2023-10-20 11:20:14,886] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009989 losses: 6348.3970 (5984.2718) coarse_loss: 6302.2363 (5919.5359) fine_loss: 60.0684 (64.7359)[0m
+[[32mINFO] [[32m2023-10-20 11:20:18,142] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3421.4451 (3695.5446) coarse_loss: 3342.8296 (3625.5314) fine_loss: 64.0838 (70.0131)[0m
+Epoch: [63] [  0/107] eta: 0:03:30 lr: 0.00009989 losses: 5834.5054 (5834.5054) coarse_loss: 5801.9775 (5801.9775) fine_loss: 32.5279 (32.5279) time: 1.9649 data: 1.3834 max_mem: 12832
+Epoch: [63] [106/107] eta: 0:00:00 lr: 0.00009989 losses: 4958.6655 (5714.1148) coarse_loss: 4858.2910 (5649.5210) fine_loss: 62.2239 (64.5938) time: 0.2686 data: 0.0001 max_mem: 12832
+Epoch: [63] Total time: 0:00:33 (0.3128 s / it 
+[[32mINFO] [[32m2023-10-20 11:20:51,615] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009989 losses: 4958.6655 (5714.1148) coarse_loss: 4858.2910 (5649.5210) fine_loss: 62.2239 (64.5938)[0m
+[[32mINFO] [[32m2023-10-20 11:20:54,779] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3068.6389 (3873.8716) coarse_loss: 3013.0605 (3804.4842) fine_loss: 55.5784 (69.3874)[0m
+Epoch: [64] [  0/107] eta: 0:02:17 lr: 0.00009989 losses: 3029.0376 (3029.0376) coarse_loss: 2958.4121 (2958.4121) fine_loss: 70.6255 (70.6255) time: 1.2830 data: 0.8490 max_mem: 12832
+Epoch: [64] [106/107] eta: 0:00:00 lr: 0.00009989 losses: 5658.2886 (5363.4874) coarse_loss: 5604.1523 (5298.7007) fine_loss: 54.1362 (64.7867) time: 0.2819 data: 0.0001 max_mem: 12832
+Epoch: [64] Total time: 0:00:32 (0.3035 s / it 
+[[32mINFO] [[32m2023-10-20 11:21:27,252] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009989 losses: 5658.2886 (5363.4874) coarse_loss: 5604.1523 (5298.7007) fine_loss: 54.1362 (64.7867)[0m
+[[32mINFO] [[32m2023-10-20 11:21:30,433] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3520.3574 (3902.5741) coarse_loss: 3479.5601 (3848.1973) fine_loss: 42.8988 (54.3768)[0m
+Epoch: [65] [  0/107] eta: 0:02:27 lr: 0.00009988 losses: 5975.9561 (5975.9561) coarse_loss: 5929.9092 (5929.9092) fine_loss: 46.0470 (46.0470) time: 1.3775 data: 0.9474 max_mem: 12832
+Epoch: [65] [106/107] eta: 0:00:00 lr: 0.00009988 losses: 4775.3428 (5202.4213) coarse_loss: 4707.0938 (5134.5645) fine_loss: 66.8642 (67.8568) time: 0.2733 data: 0.0001 max_mem: 12832
+Epoch: [65] Total time: 0:00:32 (0.3024 s / it 
+[[32mINFO] [[32m2023-10-20 11:22:02,794] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009988 losses: 4775.3428 (5202.4213) coarse_loss: 4707.0938 (5134.5645) fine_loss: 66.8642 (67.8568)[0m
+[[32mINFO] [[32m2023-10-20 11:22:05,990] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3434.2332 (4170.0880) coarse_loss: 3367.3896 (4112.5750) fine_loss: 58.4961 (57.5129)[0m
+Epoch: [66] [  0/107] eta: 0:02:23 lr: 0.00009988 losses: 6414.9409 (6414.9409) coarse_loss: 6337.1401 (6337.1401) fine_loss: 77.8008 (77.8008) time: 1.3399 data: 0.8670 max_mem: 12832
+Epoch: [66] [106/107] eta: 0:00:00 lr: 0.00009988 losses: 5780.1875 (5689.9355) coarse_loss: 5704.5742 (5624.1687) fine_loss: 69.9391 (65.7668) time: 0.2794 data: 0.0001 max_mem: 12832
+Epoch: [66] Total time: 0:00:32 (0.3024 s / it 
+[[32mINFO] [[32m2023-10-20 11:22:38,350] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009988 losses: 5780.1875 (5689.9355) coarse_loss: 5704.5742 (5624.1687) fine_loss: 69.9391 (65.7668)[0m
+[[32mINFO] [[32m2023-10-20 11:22:41,441] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3475.8633 (3313.4142) coarse_loss: 3438.5259 (3250.6180) fine_loss: 56.1114 (62.7962)[0m
+Epoch: [67] [  0/107] eta: 0:02:39 lr: 0.00009988 losses: 9986.6826 (9986.6826) coarse_loss: 9944.7500 (9944.7500) fine_loss: 41.9330 (41.9330) time: 1.4926 data: 1.0595 max_mem: 12832
+Epoch: [67] [106/107] eta: 0:00:00 lr: 0.00009988 losses: 5085.5708 (5208.4011) coarse_loss: 4994.4551 (5145.2698) fine_loss: 62.5527 (63.1314) time: 0.2714 data: 0.0001 max_mem: 12832
+Epoch: [67] Total time: 0:00:32 (0.3005 s / it 
+[[32mINFO] [[32m2023-10-20 11:23:13,599] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009988 losses: 5085.5708 (5208.4011) coarse_loss: 4994.4551 (5145.2698) fine_loss: 62.5527 (63.1314)[0m
+[[32mINFO] [[32m2023-10-20 11:23:16,778] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2670.8848 (2990.2140) coarse_loss: 2585.6094 (2931.5441) fine_loss: 51.6854 (58.6699)[0m
+Epoch: [68] [  0/107] eta: 0:02:24 lr: 0.00009987 losses: 5437.3228 (5437.3228) coarse_loss: 5391.3662 (5391.3662) fine_loss: 45.9566 (45.9566) time: 1.3519 data: 0.8732 max_mem: 12832
+Epoch: [68] [106/107] eta: 0:00:00 lr: 0.00009987 losses: 5086.3467 (5221.0782) coarse_loss: 4996.7236 (5153.8303) fine_loss: 62.4253 (67.2479) time: 0.2790 data: 0.0001 max_mem: 12832
+Epoch: [68] Total time: 0:00:32 (0.3017 s / it 
+[[32mINFO] [[32m2023-10-20 11:23:49,060] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009987 losses: 5086.3467 (5221.0782) coarse_loss: 4996.7236 (5153.8303) fine_loss: 62.4253 (67.2479)[0m
+[[32mINFO] [[32m2023-10-20 11:23:52,220] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2537.8347 (3361.5419) coarse_loss: 2496.3608 (3305.5426) fine_loss: 44.0420 (55.9993)[0m
+Epoch: [69] [  0/107] eta: 0:02:16 lr: 0.00009987 losses: 4017.9768 (4017.9768) coarse_loss: 3952.2666 (3952.2666) fine_loss: 65.7103 (65.7103) time: 1.2713 data: 0.7706 max_mem: 12832
+Epoch: [69] [106/107] eta: 0:00:00 lr: 0.00009987 losses: 5297.0083 (5321.0683) coarse_loss: 5236.6147 (5257.1616) fine_loss: 71.1432 (63.9068) time: 0.2756 data: 0.0001 max_mem: 12832
+Epoch: [69] Total time: 0:00:32 (0.3029 s / it 
+[[32mINFO] [[32m2023-10-20 11:24:24,634] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009987 losses: 5297.0083 (5321.0683) coarse_loss: 5236.6147 (5257.1616) fine_loss: 71.1432 (63.9068)[0m
+[[32mINFO] [[32m2023-10-20 11:24:27,675] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2677.0857 (2955.4256) coarse_loss: 2598.9331 (2891.1841) fine_loss: 55.2525 (64.2415)[0m
+Epoch: [70] [  0/107] eta: 0:02:19 lr: 0.00009987 losses: 5247.2373 (5247.2373) coarse_loss: 5193.6885 (5193.6885) fine_loss: 53.5488 (53.5488) time: 1.3053 data: 0.8662 max_mem: 12832
+Epoch: [70] [106/107] eta: 0:00:00 lr: 0.00009987 losses: 6502.1211 (5536.7189) coarse_loss: 6450.7070 (5473.5568) fine_loss: 64.1125 (63.1621) time: 0.2851 data: 0.0001 max_mem: 12832
+Epoch: [70] Total time: 0:00:32 (0.3003 s / it 
+[[32mINFO] [[32m2023-10-20 11:24:59,804] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009987 losses: 6502.1211 (5536.7189) coarse_loss: 6450.7070 (5473.5568) fine_loss: 64.1125 (63.1621)[0m
+[[32mINFO] [[32m2023-10-20 11:25:03,078] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3874.2468 (3968.9657) coarse_loss: 3816.3740 (3913.7434) fine_loss: 50.6529 (55.2224)[0m
+Epoch: [71] [  0/107] eta: 0:02:21 lr: 0.00009986 losses: 4320.5312 (4320.5312) coarse_loss: 4271.6797 (4271.6797) fine_loss: 48.8514 (48.8514) time: 1.3241 data: 0.8237 max_mem: 12832
+Epoch: [71] [106/107] eta: 0:00:00 lr: 0.00009986 losses: 5414.5103 (5739.1904) coarse_loss: 5364.4458 (5675.5338) fine_loss: 51.2294 (63.6567) time: 0.2856 data: 0.0001 max_mem: 12832
+Epoch: [71] Total time: 0:00:32 (0.3037 s / it 
+[[32mINFO] [[32m2023-10-20 11:25:35,578] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009986 losses: 5414.5103 (5739.1904) coarse_loss: 5364.4458 (5675.5338) fine_loss: 51.2294 (63.6567)[0m
+[[32mINFO] [[32m2023-10-20 11:25:38,799] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2922.3540 (3299.2038) coarse_loss: 2858.4541 (3242.9075) fine_loss: 46.8425 (56.2963)[0m
+Epoch: [72] [  0/107] eta: 0:02:32 lr: 0.00009986 losses: 5031.3062 (5031.3062) coarse_loss: 4993.0361 (4993.0361) fine_loss: 38.2702 (38.2702) time: 1.4296 data: 1.0484 max_mem: 12832
+Epoch: [72] [106/107] eta: 0:00:00 lr: 0.00009986 losses: 5730.1060 (5533.1761) coarse_loss: 5673.2891 (5470.7713) fine_loss: 57.7663 (62.4048) time: 0.2934 data: 0.0001 max_mem: 12832
+Epoch: [72] Total time: 0:00:32 (0.3039 s / it 
+[[32mINFO] [[32m2023-10-20 11:26:11,315] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009986 losses: 5730.1060 (5533.1761) coarse_loss: 5673.2891 (5470.7713) fine_loss: 57.7663 (62.4048)[0m
+[[32mINFO] [[32m2023-10-20 11:26:14,623] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3902.4617 (3807.0999) coarse_loss: 3835.7710 (3742.6089) fine_loss: 61.9756 (64.4910)[0m
+Epoch: [73] [  0/107] eta: 0:02:30 lr: 0.00009985 losses: 7280.8296 (7280.8296) coarse_loss: 7233.2129 (7233.2129) fine_loss: 47.6165 (47.6165) time: 1.4027 data: 0.8899 max_mem: 12832
+Epoch: [73] [106/107] eta: 0:00:00 lr: 0.00009985 losses: 5035.7236 (5606.1522) coarse_loss: 4958.7632 (5542.7656) fine_loss: 70.3831 (63.3866) time: 0.2748 data: 0.0001 max_mem: 12832
+Epoch: [73] Total time: 0:00:32 (0.3045 s / it 
+[[32mINFO] [[32m2023-10-20 11:26:47,202] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009985 losses: 5035.7236 (5606.1522) coarse_loss: 4958.7632 (5542.7656) fine_loss: 70.3831 (63.3866)[0m
+[[32mINFO] [[32m2023-10-20 11:26:50,303] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2761.2585 (2957.3844) coarse_loss: 2706.9343 (2891.1504) fine_loss: 58.1830 (66.2340)[0m
+Epoch: [74] [  0/107] eta: 0:02:32 lr: 0.00009985 losses: 4970.9380 (4970.9380) coarse_loss: 4931.2832 (4931.2832) fine_loss: 39.6550 (39.6550) time: 1.4215 data: 0.9992 max_mem: 12832
+Epoch: [74] [106/107] eta: 0:00:00 lr: 0.00009985 losses: 5142.6714 (5332.2766) coarse_loss: 5102.8467 (5268.3931) fine_loss: 50.9173 (63.8835) time: 0.2832 data: 0.0001 max_mem: 12832
+Epoch: [74] Total time: 0:00:32 (0.3048 s / it 
+[[32mINFO] [[32m2023-10-20 11:27:22,918] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009985 losses: 5142.6714 (5332.2766) coarse_loss: 5102.8467 (5268.3931) fine_loss: 50.9173 (63.8835)[0m
+[[32mINFO] [[32m2023-10-20 11:27:26,061] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3007.1174 (3172.8477) coarse_loss: 2950.6138 (3109.6855) fine_loss: 56.5036 (63.1622)[0m
+Epoch: [75] [  0/107] eta: 0:02:33 lr: 0.00009985 losses: 6886.6309 (6886.6309) coarse_loss: 6833.1621 (6833.1621) fine_loss: 53.4690 (53.4690) time: 1.4356 data: 0.9860 max_mem: 12832
+Epoch: [75] [106/107] eta: 0:00:00 lr: 0.00009985 losses: 5292.9019 (5209.8032) coarse_loss: 5235.5718 (5146.9938) fine_loss: 65.7894 (62.8093) time: 0.2752 data: 0.0001 max_mem: 12832
+Epoch: [75] Total time: 0:00:32 (0.3025 s / it 
+[[32mINFO] [[32m2023-10-20 11:27:58,434] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009985 losses: 5292.9019 (5209.8032) coarse_loss: 5235.5718 (5146.9938) fine_loss: 65.7894 (62.8093)[0m
+[[32mINFO] [[32m2023-10-20 11:28:01,656] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2990.1196 (3316.9093) coarse_loss: 2937.6338 (3262.0707) fine_loss: 54.8876 (54.8386)[0m
+Epoch: [76] [  0/107] eta: 0:02:33 lr: 0.00009984 losses: 9061.0146 (9061.0146) coarse_loss: 9010.9229 (9010.9229) fine_loss: 50.0923 (50.0923) time: 1.4343 data: 1.0111 max_mem: 12832
+Epoch: [76] [106/107] eta: 0:00:00 lr: 0.00009984 losses: 5613.7251 (5515.3270) coarse_loss: 5556.7979 (5452.6887) fine_loss: 53.9999 (62.6383) time: 0.2826 data: 0.0001 max_mem: 12832
+Epoch: [76] Total time: 0:00:32 (0.3061 s / it 
+[[32mINFO] [[32m2023-10-20 11:28:34,410] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009984 losses: 5613.7251 (5515.3270) coarse_loss: 5556.7979 (5452.6887) fine_loss: 53.9999 (62.6383)[0m
+[[32mINFO] [[32m2023-10-20 11:28:37,598] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2436.4768 (3548.4664) coarse_loss: 2392.0325 (3488.7179) fine_loss: 57.7204 (59.7484)[0m
+Epoch: [77] [  0/107] eta: 0:02:31 lr: 0.00009984 losses: 6422.8589 (6422.8589) coarse_loss: 6375.8555 (6375.8555) fine_loss: 47.0034 (47.0034) time: 1.4176 data: 0.7852 max_mem: 12832
+Epoch: [77] [106/107] eta: 0:00:00 lr: 0.00009984 losses: 5659.3755 (5489.1289) coarse_loss: 5599.1548 (5430.0740) fine_loss: 63.0838 (59.0549) time: 0.2765 data: 0.0001 max_mem: 12832
+Epoch: [77] Total time: 0:00:32 (0.3037 s / it 
+[[32mINFO] [[32m2023-10-20 11:29:10,095] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009984 losses: 5659.3755 (5489.1289) coarse_loss: 5599.1548 (5430.0740) fine_loss: 63.0838 (59.0549)[0m
+[[32mINFO] [[32m2023-10-20 11:29:13,407] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3382.3420 (3823.9442) coarse_loss: 3322.3184 (3760.3341) fine_loss: 65.3663 (63.6102)[0m
+Epoch: [78] [  0/107] eta: 0:02:29 lr: 0.00009983 losses: 5548.0845 (5548.0845) coarse_loss: 5489.2393 (5489.2393) fine_loss: 58.8451 (58.8451) time: 1.3938 data: 0.9770 max_mem: 12832
+Epoch: [78] [106/107] eta: 0:00:00 lr: 0.00009983 losses: 4787.3242 (5606.5437) coarse_loss: 4718.9717 (5542.7919) fine_loss: 64.2537 (63.7519) time: 0.2758 data: 0.0001 max_mem: 12832
+Epoch: [78] Total time: 0:00:32 (0.3051 s / it 
+[[32mINFO] [[32m2023-10-20 11:29:46,054] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009983 losses: 4787.3242 (5606.5437) coarse_loss: 4718.9717 (5542.7919) fine_loss: 64.2537 (63.7519)[0m
+[[32mINFO] [[32m2023-10-20 11:29:49,093] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1698.0515 (2590.2323) coarse_loss: 1653.7158 (2530.5510) fine_loss: 56.1110 (59.6813)[0m
+Epoch: [79] [  0/107] eta: 0:02:27 lr: 0.00009983 losses: 5702.7324 (5702.7324) coarse_loss: 5668.4717 (5668.4717) fine_loss: 34.2608 (34.2608) time: 1.3752 data: 0.9091 max_mem: 12832
+Epoch: [79] [106/107] eta: 0:00:00 lr: 0.00009983 losses: 3939.1326 (5384.1795) coarse_loss: 3866.0723 (5321.4760) fine_loss: 54.9487 (62.7036) time: 0.2735 data: 0.0001 max_mem: 12832
+Epoch: [79] Total time: 0:00:32 (0.3036 s / it 
+[[32mINFO] [[32m2023-10-20 11:30:21,586] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009983 losses: 3939.1326 (5384.1795) coarse_loss: 3866.0723 (5321.4760) fine_loss: 54.9487 (62.7036)[0m
+[[32mINFO] [[32m2023-10-20 11:30:24,592] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2263.6128 (2490.0687) coarse_loss: 2166.8635 (2418.9789) fine_loss: 60.2997 (71.0899)[0m
+Epoch: [80] [  0/107] eta: 0:02:14 lr: 0.00009982 losses: 2407.3296 (2407.3296) coarse_loss: 2360.7471 (2360.7471) fine_loss: 46.5824 (46.5824) time: 1.2602 data: 0.9121 max_mem: 12832
+Epoch: [80] [106/107] eta: 0:00:00 lr: 0.00009982 losses: 3962.9998 (5181.6020) coarse_loss: 3872.7576 (5119.8227) fine_loss: 60.0858 (61.7793) time: 0.2801 data: 0.0001 max_mem: 12832
+Epoch: [80] Total time: 0:00:32 (0.3039 s / it 
+[[32mINFO] [[32m2023-10-20 11:30:57,112] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009982 losses: 3962.9998 (5181.6020) coarse_loss: 3872.7576 (5119.8227) fine_loss: 60.0858 (61.7793)[0m
+[[32mINFO] [[32m2023-10-20 11:31:00,310] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2670.5100 (2961.7082) coarse_loss: 2585.5625 (2911.4423) fine_loss: 43.5837 (50.2660)[0m
+Epoch: [81] [  0/107] eta: 0:02:29 lr: 0.00009982 losses: 4088.4304 (4088.4304) coarse_loss: 4042.9453 (4042.9453) fine_loss: 45.4852 (45.4852) time: 1.3930 data: 0.9662 max_mem: 12832
+Epoch: [81] [106/107] eta: 0:00:00 lr: 0.00009982 losses: 5244.0479 (5486.3956) coarse_loss: 5158.6387 (5423.9764) fine_loss: 59.7185 (62.4192) time: 0.2752 data: 0.0001 max_mem: 12832
+Epoch: [81] Total time: 0:00:32 (0.3041 s / it 
+[[32mINFO] [[32m2023-10-20 11:31:32,856] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009982 losses: 5244.0479 (5486.3956) coarse_loss: 5158.6387 (5423.9764) fine_loss: 59.7185 (62.4192)[0m
+[[32mINFO] [[32m2023-10-20 11:31:35,880] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2928.7500 (3123.8884) coarse_loss: 2810.7949 (3057.8604) fine_loss: 60.3359 (66.0279)[0m
+Epoch: [82] [  0/107] eta: 0:02:23 lr: 0.00009982 losses: 5279.8682 (5279.8682) coarse_loss: 5210.7773 (5210.7773) fine_loss: 69.0909 (69.0909) time: 1.3380 data: 0.9427 max_mem: 12832
+Epoch: [82] [106/107] eta: 0:00:00 lr: 0.00009982 losses: 4425.1113 (5164.5234) coarse_loss: 4347.5830 (5100.5978) fine_loss: 60.9417 (63.9256) time: 0.2788 data: 0.0001 max_mem: 12999
+Epoch: [82] Total time: 0:00:32 (0.3024 s / it 
+[[32mINFO] [[32m2023-10-20 11:32:08,240] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009982 losses: 4425.1113 (5164.5234) coarse_loss: 4347.5830 (5100.5978) fine_loss: 60.9417 (63.9256)[0m
+[[32mINFO] [[32m2023-10-20 11:32:11,511] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2311.3044 (2859.3082) coarse_loss: 2292.8896 (2794.9329) fine_loss: 59.7502 (64.3753)[0m
+Epoch: [83] [  0/107] eta: 0:02:20 lr: 0.00009981 losses: 5274.7837 (5274.7837) coarse_loss: 5203.2148 (5203.2148) fine_loss: 71.5690 (71.5690) time: 1.3160 data: 0.9376 max_mem: 12999
+Epoch: [83] [106/107] eta: 0:00:00 lr: 0.00009981 losses: 5404.2725 (5328.4266) coarse_loss: 5323.2275 (5270.1197) fine_loss: 51.5038 (58.3069) time: 0.2891 data: 0.0001 max_mem: 12999
+Epoch: [83] Total time: 0:00:32 (0.3074 s / it 
+[[32mINFO] [[32m2023-10-20 11:32:44,400] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009981 losses: 5404.2725 (5328.4266) coarse_loss: 5323.2275 (5270.1197) fine_loss: 51.5038 (58.3069)[0m
+[[32mINFO] [[32m2023-10-20 11:32:47,560] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2845.0186 (3482.1981) coarse_loss: 2772.9424 (3402.2787) fine_loss: 69.3913 (79.9195)[0m
+Epoch: [84] [  0/107] eta: 0:02:23 lr: 0.00009981 losses: 5024.9194 (5024.9194) coarse_loss: 4946.4751 (4946.4751) fine_loss: 78.4442 (78.4442) time: 1.3423 data: 1.0138 max_mem: 12999
+Epoch: [84] [106/107] eta: 0:00:00 lr: 0.00009981 losses: 5035.6426 (5215.4290) coarse_loss: 4963.7275 (5154.6903) fine_loss: 48.4474 (60.7387) time: 0.2855 data: 0.0001 max_mem: 12999
+Epoch: [84] Total time: 0:00:32 (0.3042 s / it 
+[[32mINFO] [[32m2023-10-20 11:33:20,114] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009981 losses: 5035.6426 (5215.4290) coarse_loss: 4963.7275 (5154.6903) fine_loss: 48.4474 (60.7387)[0m
+[[32mINFO] [[32m2023-10-20 11:33:23,242] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2845.4805 (3056.2275) coarse_loss: 2769.5181 (2990.9369) fine_loss: 56.6473 (65.2906)[0m
+Epoch: [85] [  0/107] eta: 0:02:15 lr: 0.00009980 losses: 2235.6833 (2235.6833) coarse_loss: 2201.6216 (2201.6216) fine_loss: 34.0617 (34.0617) time: 1.2646 data: 0.7083 max_mem: 12999
+Epoch: [85] [106/107] eta: 0:00:00 lr: 0.00009980 losses: 5733.5581 (5425.4078) coarse_loss: 5684.8691 (5362.8345) fine_loss: 56.8968 (62.5733) time: 0.2858 data: 0.0001 max_mem: 12999
+Epoch: [85] Total time: 0:00:32 (0.3050 s / it 
+[[32mINFO] [[32m2023-10-20 11:33:55,878] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009980 losses: 5733.5581 (5425.4078) coarse_loss: 5684.8691 (5362.8345) fine_loss: 56.8968 (62.5733)[0m
+[[32mINFO] [[32m2023-10-20 11:33:59,049] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3465.0852 (3745.7564) coarse_loss: 3360.6821 (3691.4267) fine_loss: 46.2990 (54.3298)[0m
+Epoch: [86] [  0/107] eta: 0:02:32 lr: 0.00009980 losses: 6149.8945 (6149.8945) coarse_loss: 6090.9468 (6090.9468) fine_loss: 58.9478 (58.9478) time: 1.4210 data: 0.9281 max_mem: 12999
+Epoch: [86] [106/107] eta: 0:00:00 lr: 0.00009980 losses: 4173.7080 (5300.1120) coarse_loss: 4114.1562 (5240.4714) fine_loss: 49.4187 (59.6405) time: 0.2788 data: 0.0001 max_mem: 12999
+Epoch: [86] Total time: 0:00:32 (0.3033 s / it 
+[[32mINFO] [[32m2023-10-20 11:34:31,502] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009980 losses: 4173.7080 (5300.1120) coarse_loss: 4114.1562 (5240.4714) fine_loss: 49.4187 (59.6405)[0m
+[[32mINFO] [[32m2023-10-20 11:34:34,612] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3412.3477 (3340.1618) coarse_loss: 3361.9116 (3282.7730) fine_loss: 50.4361 (57.3888)[0m
+Epoch: [87] [  0/107] eta: 0:02:25 lr: 0.00009979 losses: 8516.6484 (8516.6484) coarse_loss: 8435.1484 (8435.1484) fine_loss: 81.4996 (81.4996) time: 1.3591 data: 0.8455 max_mem: 12999
+Epoch: [87] [106/107] eta: 0:00:00 lr: 0.00009979 losses: 5074.3579 (5296.0129) coarse_loss: 5028.9956 (5235.4725) fine_loss: 46.4863 (60.5404) time: 0.2941 data: 0.0001 max_mem: 12999
+Epoch: [87] Total time: 0:00:32 (0.3069 s / it 
+[[32mINFO] [[32m2023-10-20 11:35:07,453] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009979 losses: 5074.3579 (5296.0129) coarse_loss: 5028.9956 (5235.4725) fine_loss: 46.4863 (60.5404)[0m
+[[32mINFO] [[32m2023-10-20 11:35:10,702] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3863.2559 (3857.1881) coarse_loss: 3824.7297 (3800.3666) fine_loss: 49.3576 (56.8215)[0m
+Epoch: [88] [  0/107] eta: 0:02:32 lr: 0.00009979 losses: 5293.9429 (5293.9429) coarse_loss: 5249.4790 (5249.4790) fine_loss: 44.4638 (44.4638) time: 1.4211 data: 0.9659 max_mem: 12999
+Epoch: [88] [106/107] eta: 0:00:00 lr: 0.00009979 losses: 4974.0117 (5238.2337) coarse_loss: 4947.1826 (5180.9814) fine_loss: 56.7084 (57.2523) time: 0.2783 data: 0.0001 max_mem: 13014
+Epoch: [88] Total time: 0:00:33 (0.3088 s / it 
+[[32mINFO] [[32m2023-10-20 11:35:43,745] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009979 losses: 4974.0117 (5238.2337) coarse_loss: 4947.1826 (5180.9814) fine_loss: 56.7084 (57.2523)[0m
+[[32mINFO] [[32m2023-10-20 11:35:46,900] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3229.5557 (3615.7504) coarse_loss: 3171.1543 (3549.2094) fine_loss: 59.9076 (66.5410)[0m
+Epoch: [89] [  0/107] eta: 0:02:27 lr: 0.00009978 losses: 3537.8152 (3537.8152) coarse_loss: 3496.5627 (3496.5627) fine_loss: 41.2524 (41.2524) time: 1.3752 data: 0.9180 max_mem: 13014
+Epoch: [89] [106/107] eta: 0:00:00 lr: 0.00009978 losses: 5080.6172 (5682.0693) coarse_loss: 5024.9326 (5623.8149) fine_loss: 51.3346 (58.2544) time: 0.2817 data: 0.0001 max_mem: 13014
+Epoch: [89] Total time: 0:00:33 (0.3099 s / it 
+[[32mINFO] [[32m2023-10-20 11:36:20,056] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009978 losses: 5080.6172 (5682.0693) coarse_loss: 5024.9326 (5623.8149) fine_loss: 51.3346 (58.2544)[0m
+[[32mINFO] [[32m2023-10-20 11:36:23,187] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2466.5220 (3089.6623) coarse_loss: 2423.2917 (3026.7771) fine_loss: 59.8204 (62.8852)[0m
+Epoch: [90] [  0/107] eta: 0:02:29 lr: 0.00009978 losses: 8956.8105 (8956.8105) coarse_loss: 8892.1855 (8892.1855) fine_loss: 64.6246 (64.6246) time: 1.3988 data: 0.9152 max_mem: 13014
+Epoch: [90] [106/107] eta: 0:00:00 lr: 0.00009978 losses: 6291.1099 (5525.6756) coarse_loss: 6228.5562 (5465.6654) fine_loss: 56.8033 (60.0102) time: 0.2887 data: 0.0001 max_mem: 13014
+Epoch: [90] Total time: 0:00:32 (0.3067 s / it 
+[[32mINFO] [[32m2023-10-20 11:36:56,006] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009978 losses: 6291.1099 (5525.6756) coarse_loss: 6228.5562 (5465.6654) fine_loss: 56.8033 (60.0102)[0m
+[[32mINFO] [[32m2023-10-20 11:36:59,245] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3381.1597 (3443.9330) coarse_loss: 3297.1143 (3385.0885) fine_loss: 54.7880 (58.8445)[0m
+Epoch: [91] [  0/107] eta: 0:02:29 lr: 0.00009977 losses: 1888.8954 (1888.8954) coarse_loss: 1851.0825 (1851.0825) fine_loss: 37.8129 (37.8129) time: 1.4001 data: 0.9892 max_mem: 13014
+Epoch: [91] [106/107] eta: 0:00:00 lr: 0.00009977 losses: 3953.1853 (5303.8283) coarse_loss: 3902.4443 (5242.4764) fine_loss: 52.9504 (61.3519) time: 0.2770 data: 0.0001 max_mem: 13014
+Epoch: [91] Total time: 0:00:32 (0.3051 s / it 
+[[32mINFO] [[32m2023-10-20 11:37:31,889] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009977 losses: 3953.1853 (5303.8283) coarse_loss: 3902.4443 (5242.4764) fine_loss: 52.9504 (61.3519)[0m
+[[32mINFO] [[32m2023-10-20 11:37:35,049] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2786.9292 (2867.8962) coarse_loss: 2730.4668 (2795.2534) fine_loss: 61.9353 (72.6427)[0m
+Epoch: [92] [  0/107] eta: 0:02:21 lr: 0.00009977 losses: 6509.5151 (6509.5151) coarse_loss: 6441.5195 (6441.5195) fine_loss: 67.9958 (67.9958) time: 1.3179 data: 0.8163 max_mem: 13014
+Epoch: [92] [106/107] eta: 0:00:00 lr: 0.00009977 losses: 4936.0967 (5327.0330) coarse_loss: 4880.5205 (5267.9156) fine_loss: 57.8872 (59.1174) time: 0.2793 data: 0.0001 max_mem: 13014
+Epoch: [92] Total time: 0:00:32 (0.3082 s / it 
+[[32mINFO] [[32m2023-10-20 11:38:08,028] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009977 losses: 4936.0967 (5327.0330) coarse_loss: 4880.5205 (5267.9156) fine_loss: 57.8872 (59.1174)[0m
+[[32mINFO] [[32m2023-10-20 11:38:11,220] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3204.1086 (3076.2464) coarse_loss: 3163.6128 (3017.0648) fine_loss: 53.6857 (59.1816)[0m
+Epoch: [93] [  0/107] eta: 0:02:32 lr: 0.00009976 losses: 6268.7959 (6268.7959) coarse_loss: 6221.9321 (6221.9321) fine_loss: 46.8637 (46.8637) time: 1.4231 data: 0.9917 max_mem: 13014
+Epoch: [93] [106/107] eta: 0:00:00 lr: 0.00009976 losses: 5486.1187 (5281.2606) coarse_loss: 5405.4092 (5220.8956) fine_loss: 52.9275 (60.3651) time: 0.2825 data: 0.0001 max_mem: 13014
+Epoch: [93] Total time: 0:00:32 (0.3072 s / it 
+[[32mINFO] [[32m2023-10-20 11:38:44,092] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009976 losses: 5486.1187 (5281.2606) coarse_loss: 5405.4092 (5220.8956) fine_loss: 52.9275 (60.3651)[0m
+[[32mINFO] [[32m2023-10-20 11:38:47,210] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2944.1860 (3132.7333) coarse_loss: 2863.7324 (3072.4268) fine_loss: 47.2349 (60.3064)[0m
+Epoch: [94] [  0/107] eta: 0:02:14 lr: 0.00009976 losses: 3658.1428 (3658.1428) coarse_loss: 3590.7856 (3590.7856) fine_loss: 67.3571 (67.3571) time: 1.2573 data: 0.7425 max_mem: 13014
+Epoch: [94] [106/107] eta: 0:00:00 lr: 0.00009976 losses: 4464.1353 (5020.4398) coarse_loss: 4414.3042 (4956.8143) fine_loss: 57.7231 (63.6255) time: 0.2823 data: 0.0001 max_mem: 13014
+Epoch: [94] Total time: 0:00:32 (0.3024 s / it 
+[[32mINFO] [[32m2023-10-20 11:39:19,570] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009976 losses: 4464.1353 (5020.4398) coarse_loss: 4414.3042 (4956.8143) fine_loss: 57.7231 (63.6255)[0m
+[[32mINFO] [[32m2023-10-20 11:39:22,692] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1753.7520 (2483.9813) coarse_loss: 1703.4257 (2429.1975) fine_loss: 50.3263 (54.7838)[0m
+Epoch: [95] [  0/107] eta: 0:02:27 lr: 0.00009975 losses: 7793.3916 (7793.3916) coarse_loss: 7721.9639 (7721.9639) fine_loss: 71.4278 (71.4278) time: 1.3761 data: 1.0101 max_mem: 13014
+Epoch: [95] [106/107] eta: 0:00:00 lr: 0.00009975 losses: 4878.7090 (5044.5498) coarse_loss: 4816.6641 (4986.9693) fine_loss: 54.7713 (57.5805) time: 0.2815 data: 0.0001 max_mem: 13014
+Epoch: [95] Total time: 0:00:32 (0.3083 s / it 
+[[32mINFO] [[32m2023-10-20 11:39:55,682] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009975 losses: 4878.7090 (5044.5498) coarse_loss: 4816.6641 (4986.9693) fine_loss: 54.7713 (57.5805)[0m
+[[32mINFO] [[32m2023-10-20 11:39:58,909] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 4052.6455 (3596.5276) coarse_loss: 4023.1436 (3538.4732) fine_loss: 53.0423 (58.0544)[0m
+Epoch: [96] [  0/107] eta: 0:02:21 lr: 0.00009975 losses: 3231.7725 (3231.7725) coarse_loss: 3167.2981 (3167.2981) fine_loss: 64.4743 (64.4743) time: 1.3243 data: 0.9461 max_mem: 13014
+Epoch: [96] [106/107] eta: 0:00:00 lr: 0.00009975 losses: 5490.3486 (5253.2509) coarse_loss: 5440.2075 (5193.0876) fine_loss: 64.7726 (60.1632) time: 0.2742 data: 0.0001 max_mem: 13014
+Epoch: [96] Total time: 0:00:32 (0.3065 s / it 
+[[32mINFO] [[32m2023-10-20 11:40:31,703] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009975 losses: 5490.3486 (5253.2509) coarse_loss: 5440.2075 (5193.0876) fine_loss: 64.7726 (60.1632)[0m
+[[32mINFO] [[32m2023-10-20 11:40:35,026] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2890.3909 (3263.8081) coarse_loss: 2794.4038 (3206.6895) fine_loss: 56.2145 (57.1185)[0m
+Epoch: [97] [  0/107] eta: 0:02:06 lr: 0.00009974 losses: 1528.4976 (1528.4976) coarse_loss: 1450.0344 (1450.0344) fine_loss: 78.4631 (78.4631) time: 1.1823 data: 0.7449 max_mem: 13014
+Epoch: [97] [106/107] eta: 0:00:00 lr: 0.00009974 losses: 4779.6421 (5303.3069) coarse_loss: 4730.9609 (5245.3962) fine_loss: 48.6812 (57.9107) time: 0.2823 data: 0.0001 max_mem: 13014
+Epoch: [97] Total time: 0:00:32 (0.3056 s / it 
+[[32mINFO] [[32m2023-10-20 11:41:07,732] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009974 losses: 4779.6421 (5303.3069) coarse_loss: 4730.9609 (5245.3962) fine_loss: 48.6812 (57.9107)[0m
+[[32mINFO] [[32m2023-10-20 11:41:10,986] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3128.3135 (3027.7200) coarse_loss: 3044.5818 (2970.3116) fine_loss: 46.3269 (57.4084)[0m
+Epoch: [98] [  0/107] eta: 0:02:24 lr: 0.00009974 losses: 4791.3662 (4791.3662) coarse_loss: 4693.5850 (4693.5850) fine_loss: 97.7815 (97.7815) time: 1.3463 data: 0.9746 max_mem: 13014
+Epoch: [98] [106/107] eta: 0:00:00 lr: 0.00009974 losses: 5550.0435 (5268.4441) coarse_loss: 5465.3892 (5205.8114) fine_loss: 63.5413 (62.6328) time: 0.2817 data: 0.0001 max_mem: 13014
+Epoch: [98] Total time: 0:00:32 (0.3074 s / it 
+[[32mINFO] [[32m2023-10-20 11:41:43,881] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009974 losses: 5550.0435 (5268.4441) coarse_loss: 5465.3892 (5205.8114) fine_loss: 63.5413 (62.6328)[0m
+[[32mINFO] [[32m2023-10-20 11:41:47,051] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3019.6982 (3310.2436) coarse_loss: 2959.5559 (3249.9984) fine_loss: 56.7672 (60.2452)[0m
+Epoch: [99] [  0/107] eta: 0:02:22 lr: 0.00009973 losses: 4923.9282 (4923.9282) coarse_loss: 4865.1147 (4865.1147) fine_loss: 58.8134 (58.8134) time: 1.3285 data: 0.8119 max_mem: 13014
+Epoch: [99] [106/107] eta: 0:00:00 lr: 0.00009973 losses: 4621.8193 (5162.8376) coarse_loss: 4561.0864 (5104.9260) fine_loss: 60.7328 (57.9116) time: 0.2757 data: 0.0001 max_mem: 13014
+Epoch: [99] Total time: 0:00:32 (0.3061 s / it 
+[[32mINFO] [[32m2023-10-20 11:42:19,807] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009973 losses: 4621.8193 (5162.8376) coarse_loss: 4561.0864 (5104.9260) fine_loss: 60.7328 (57.9116)[0m
+[[32mINFO] [[32m2023-10-20 11:42:23,150] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3199.9229 (3721.7516) coarse_loss: 3092.1384 (3670.4109) fine_loss: 41.5634 (51.3407)[0m
+Epoch: [100] [  0/107] eta: 0:02:31 lr: 0.00009973 losses: 10167.2734 (10167.2734) coarse_loss: 10095.1211 (10095.1211) fine_loss: 72.1525 (72.1525) time: 1.4147 data: 1.0093 max_mem: 13014
+Epoch: [100] [106/107] eta: 0:00:00 lr: 0.00009973 losses: 4011.7952 (5217.3178) coarse_loss: 3947.5298 (5158.2867) fine_loss: 53.8843 (59.0311) time: 0.2885 data: 0.0001 max_mem: 13014
+Epoch: [100] Total time: 0:00:33 (0.3114 s / it 
+[[32mINFO] [[32m2023-10-20 11:42:56,473] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009973 losses: 4011.7952 (5217.3178) coarse_loss: 3947.5298 (5158.2867) fine_loss: 53.8843 (59.0311)[0m
+[[32mINFO] [[32m2023-10-20 11:42:59,599] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2069.9563 (2923.5744) coarse_loss: 2013.3042 (2859.3373) fine_loss: 46.0425 (64.2371)[0m
+Epoch: [101] [  0/107] eta: 0:02:29 lr: 0.00009972 losses: 7946.7104 (7946.7104) coarse_loss: 7914.4941 (7914.4941) fine_loss: 32.2165 (32.2165) time: 1.3964 data: 0.9317 max_mem: 13014
+Epoch: [101] [106/107] eta: 0:00:00 lr: 0.00009972 losses: 6188.0703 (5352.6143) coarse_loss: 6137.6670 (5295.8352) fine_loss: 45.5407 (56.7790) time: 0.2921 data: 0.0001 max_mem: 13014
+Epoch: [101] Total time: 0:00:33 (0.3136 s / it 
+[[32mINFO] [[32m2023-10-20 11:43:33,151] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009972 losses: 6188.0703 (5352.6143) coarse_loss: 6137.6670 (5295.8352) fine_loss: 45.5407 (56.7790)[0m
+[[32mINFO] [[32m2023-10-20 11:43:36,341] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2112.5139 (2979.3747) coarse_loss: 2077.3318 (2918.3100) fine_loss: 63.5404 (61.0647)[0m
+Epoch: [102] [  0/107] eta: 0:02:28 lr: 0.00009972 losses: 9080.7393 (9080.7393) coarse_loss: 9021.8164 (9021.8164) fine_loss: 58.9230 (58.9230) time: 1.3854 data: 0.9057 max_mem: 13014
+Epoch: [102] [106/107] eta: 0:00:00 lr: 0.00009972 losses: 4727.7812 (5189.3039) coarse_loss: 4690.8062 (5129.0705) fine_loss: 59.8679 (60.2333) time: 0.2837 data: 0.0001 max_mem: 13014
+Epoch: [102] Total time: 0:00:32 (0.3070 s / it 
+[[32mINFO] [[32m2023-10-20 11:44:09,189] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009972 losses: 4727.7812 (5189.3039) coarse_loss: 4690.8062 (5129.0705) fine_loss: 59.8679 (60.2333)[0m
+[[32mINFO] [[32m2023-10-20 11:44:12,428] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3751.4160 (3478.2725) coarse_loss: 3666.1414 (3420.0326) fine_loss: 65.8983 (58.2399)[0m
+Epoch: [103] [  0/107] eta: 0:02:26 lr: 0.00009971 losses: 4597.4312 (4597.4312) coarse_loss: 4543.3945 (4543.3945) fine_loss: 54.0368 (54.0368) time: 1.3721 data: 0.8690 max_mem: 13014
+Epoch: [103] [106/107] eta: 0:00:00 lr: 0.00009971 losses: 5040.1479 (5395.6906) coarse_loss: 4992.7949 (5338.0997) fine_loss: 47.3530 (57.5908) time: 0.2938 data: 0.0001 max_mem: 13027
+Epoch: [103] Total time: 0:00:33 (0.3114 s / it 
+[[32mINFO] [[32m2023-10-20 11:44:45,748] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009971 losses: 5040.1479 (5395.6906) coarse_loss: 4992.7949 (5338.0997) fine_loss: 47.3530 (57.5908)[0m
+[[32mINFO] [[32m2023-10-20 11:44:49,240] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3111.6548 (3493.4292) coarse_loss: 2979.1462 (3427.3524) fine_loss: 56.3963 (66.0768)[0m
+Epoch: [104] [  0/107] eta: 0:02:28 lr: 0.00009970 losses: 6363.9785 (6363.9785) coarse_loss: 6259.5928 (6259.5928) fine_loss: 104.3857 (104.3857) time: 1.3908 data: 1.0199 max_mem: 13027
+Epoch: [104] [106/107] eta: 0:00:00 lr: 0.00009970 losses: 6098.5771 (5369.5296) coarse_loss: 6054.1270 (5312.6740) fine_loss: 54.0855 (56.8557) time: 0.2899 data: 0.0001 max_mem: 13075
+Epoch: [104] Total time: 0:00:33 (0.3105 s / it 
+[[32mINFO] [[32m2023-10-20 11:45:22,468] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009970 losses: 6098.5771 (5369.5296) coarse_loss: 6054.1270 (5312.6740) fine_loss: 54.0855 (56.8557)[0m
+[[32mINFO] [[32m2023-10-20 11:45:25,726] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3616.5125 (3468.9197) coarse_loss: 3566.4189 (3411.8513) fine_loss: 52.8257 (57.0684)[0m
+Epoch: [105] [  0/107] eta: 0:02:32 lr: 0.00009970 losses: 6678.6572 (6678.6572) coarse_loss: 6635.7666 (6635.7666) fine_loss: 42.8906 (42.8906) time: 1.4293 data: 0.9938 max_mem: 13075
+Epoch: [105] [106/107] eta: 0:00:00 lr: 0.00009970 losses: 3729.1514 (5254.2640) coarse_loss: 3646.9185 (5193.7714) fine_loss: 62.7938 (60.4927) time: 0.2718 data: 0.0001 max_mem: 13075
+Epoch: [105] Total time: 0:00:32 (0.3083 s / it 
+[[32mINFO] [[32m2023-10-20 11:45:58,714] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009970 losses: 3729.1514 (5254.2640) coarse_loss: 3646.9185 (5193.7714) fine_loss: 62.7938 (60.4927)[0m
+[[32mINFO] [[32m2023-10-20 11:46:01,782] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2349.3301 (2222.8774) coarse_loss: 2258.5420 (2161.9062) fine_loss: 49.0636 (60.9712)[0m
+Epoch: [106] [  0/107] eta: 0:02:15 lr: 0.00009969 losses: 1847.5167 (1847.5167) coarse_loss: 1786.3143 (1786.3143) fine_loss: 61.2024 (61.2024) time: 1.2636 data: 0.7930 max_mem: 13075
+Epoch: [106] [106/107] eta: 0:00:00 lr: 0.00009969 losses: 5492.0752 (5327.4094) coarse_loss: 5422.3242 (5272.8650) fine_loss: 54.5611 (54.5444) time: 0.2826 data: 0.0001 max_mem: 13075
+Epoch: [106] Total time: 0:00:33 (0.3131 s / it 
+[[32mINFO] [[32m2023-10-20 11:46:35,282] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009969 losses: 5492.0752 (5327.4094) coarse_loss: 5422.3242 (5272.8650) fine_loss: 54.5611 (54.5444)[0m
+[[32mINFO] [[32m2023-10-20 11:46:38,605] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2603.2698 (4033.7831) coarse_loss: 2577.6924 (3985.2047) fine_loss: 48.3363 (48.5785)[0m
+Epoch: [107] [  0/107] eta: 0:02:26 lr: 0.00009969 losses: 6301.3945 (6301.3945) coarse_loss: 6225.5786 (6225.5786) fine_loss: 75.8161 (75.8161) time: 1.3712 data: 1.0237 max_mem: 13075
+Epoch: [107] [106/107] eta: 0:00:00 lr: 0.00009969 losses: 4581.4971 (4898.6313) coarse_loss: 4528.0156 (4838.8172) fine_loss: 62.4877 (59.8141) time: 0.2781 data: 0.0001 max_mem: 13075
+Epoch: [107] Total time: 0:00:32 (0.3078 s / it 
+[[32mINFO] [[32m2023-10-20 11:47:11,542] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009969 losses: 4581.4971 (4898.6313) coarse_loss: 4528.0156 (4838.8172) fine_loss: 62.4877 (59.8141)[0m
+[[32mINFO] [[32m2023-10-20 11:47:14,697] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2629.3879 (2928.2629) coarse_loss: 2606.4961 (2869.2093) fine_loss: 57.4690 (59.0536)[0m
+Epoch: [108] [  0/107] eta: 0:02:15 lr: 0.00009968 losses: 3827.0032 (3827.0032) coarse_loss: 3751.8677 (3751.8677) fine_loss: 75.1356 (75.1356) time: 1.2672 data: 0.7576 max_mem: 13075
+Epoch: [108] [106/107] eta: 0:00:00 lr: 0.00009968 losses: 4631.8940 (5334.9817) coarse_loss: 4551.2695 (5278.5422) fine_loss: 47.8554 (56.4395) time: 0.2819 data: 0.0001 max_mem: 13075
+Epoch: [108] Total time: 0:00:33 (0.3095 s / it 
+[[32mINFO] [[32m2023-10-20 11:47:47,813] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009968 losses: 4631.8940 (5334.9817) coarse_loss: 4551.2695 (5278.5422) fine_loss: 47.8554 (56.4395)[0m
+[[32mINFO] [[32m2023-10-20 11:47:51,005] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2966.9458 (2849.1826) coarse_loss: 2935.0510 (2782.4372) fine_loss: 54.2623 (66.7453)[0m
+Epoch: [109] [  0/107] eta: 0:02:28 lr: 0.00009967 losses: 4960.6729 (4960.6729) coarse_loss: 4921.7002 (4921.7002) fine_loss: 38.9729 (38.9729) time: 1.3856 data: 0.9891 max_mem: 13075
+Epoch: [109] [106/107] eta: 0:00:00 lr: 0.00009967 losses: 5140.2935 (5386.4479) coarse_loss: 5078.4902 (5327.3199) fine_loss: 50.6761 (59.1280) time: 0.2924 data: 0.0001 max_mem: 13509
+Epoch: [109] Total time: 0:00:33 (0.3101 s / it 
+[[32mINFO] [[32m2023-10-20 11:48:24,184] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009967 losses: 5140.2935 (5386.4479) coarse_loss: 5078.4902 (5327.3199) fine_loss: 50.6761 (59.1280)[0m
+[[32mINFO] [[32m2023-10-20 11:48:27,399] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3017.6733 (3053.1936) coarse_loss: 2932.5786 (2988.9821) fine_loss: 60.0150 (64.2115)[0m
+Epoch: [110] [  0/107] eta: 0:02:33 lr: 0.00009967 losses: 10272.4043 (10272.4043) coarse_loss: 10199.5449 (10199.5449) fine_loss: 72.8597 (72.8597) time: 1.4340 data: 1.0177 max_mem: 13509
+Epoch: [110] [106/107] eta: 0:00:00 lr: 0.00009967 losses: 5941.7119 (5432.5069) coarse_loss: 5882.0508 (5372.5514) fine_loss: 52.1929 (59.9555) time: 0.2923 data: 0.0001 max_mem: 13509
+Epoch: [110] Total time: 0:00:33 (0.3112 s / it 
+[[32mINFO] [[32m2023-10-20 11:49:00,696] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009967 losses: 5941.7119 (5432.5069) coarse_loss: 5882.0508 (5372.5514) fine_loss: 52.1929 (59.9555)[0m
+[[32mINFO] [[32m2023-10-20 11:49:03,914] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3172.6357 (3544.6455) coarse_loss: 3126.5444 (3491.4748) fine_loss: 53.2194 (53.1707)[0m
+Epoch: [111] [  0/107] eta: 0:02:25 lr: 0.00009966 losses: 3800.1074 (3800.1074) coarse_loss: 3699.3213 (3699.3213) fine_loss: 100.7861 (100.7861) time: 1.3575 data: 1.0378 max_mem: 13509
+Epoch: [111] [106/107] eta: 0:00:00 lr: 0.00009966 losses: 5834.5596 (5104.2055) coarse_loss: 5777.0322 (5045.5867) fine_loss: 53.9685 (58.6187) time: 0.2817 data: 0.0001 max_mem: 13509
+Epoch: [111] Total time: 0:00:33 (0.3102 s / it 
+[[32mINFO] [[32m2023-10-20 11:49:37,110] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009966 losses: 5834.5596 (5104.2055) coarse_loss: 5777.0322 (5045.5867) fine_loss: 53.9685 (58.6187)[0m
+[[32mINFO] [[32m2023-10-20 11:49:40,377] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2882.9763 (2909.4271) coarse_loss: 2841.7361 (2851.9543) fine_loss: 42.6471 (57.4729)[0m
+Epoch: [112] [  0/107] eta: 0:02:28 lr: 0.00009966 losses: 4042.5947 (4042.5947) coarse_loss: 3998.3770 (3998.3770) fine_loss: 44.2177 (44.2177) time: 1.3901 data: 0.9956 max_mem: 13509
+Epoch: [112] [106/107] eta: 0:00:00 lr: 0.00009966 losses: 5125.3833 (5239.4191) coarse_loss: 5073.8213 (5179.9406) fine_loss: 57.1975 (59.4785) time: 0.2837 data: 0.0001 max_mem: 13509
+Epoch: [112] Total time: 0:00:33 (0.3103 s / it 
+[[32mINFO] [[32m2023-10-20 11:50:13,584] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009966 losses: 5125.3833 (5239.4191) coarse_loss: 5073.8213 (5179.9406) fine_loss: 57.1975 (59.4785)[0m
+[[32mINFO] [[32m2023-10-20 11:50:16,793] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2956.6455 (3354.7785) coarse_loss: 2908.9229 (3304.0315) fine_loss: 45.8440 (50.7470)[0m
+Epoch: [113] [  0/107] eta: 0:02:19 lr: 0.00009965 losses: 5106.5903 (5106.5903) coarse_loss: 5050.2158 (5050.2158) fine_loss: 56.3744 (56.3744) time: 1.3069 data: 0.8833 max_mem: 13509
+Epoch: [113] [106/107] eta: 0:00:00 lr: 0.00009965 losses: 6200.4009 (5190.3865) coarse_loss: 6145.2627 (5133.2718) fine_loss: 49.0385 (57.1147) time: 0.2933 data: 0.0001 max_mem: 13509
+Epoch: [113] Total time: 0:00:33 (0.3102 s / it 
+[[32mINFO] [[32m2023-10-20 11:50:49,985] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009965 losses: 6200.4009 (5190.3865) coarse_loss: 6145.2627 (5133.2718) fine_loss: 49.0385 (57.1147)[0m
+[[32mINFO] [[32m2023-10-20 11:50:53,489] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3569.6738 (3882.6412) coarse_loss: 3520.1707 (3829.1311) fine_loss: 49.5032 (53.5101)[0m
+Epoch: [114] [  0/107] eta: 0:02:28 lr: 0.00009964 losses: 3790.0454 (3790.0454) coarse_loss: 3739.1987 (3739.1987) fine_loss: 50.8467 (50.8467) time: 1.3841 data: 0.9541 max_mem: 13509
+Epoch: [114] [106/107] eta: 0:00:00 lr: 0.00009964 losses: 4447.9854 (5062.7824) coarse_loss: 4408.5918 (5007.6896) fine_loss: 53.9720 (55.0927) time: 0.2887 data: 0.0001 max_mem: 13509
+Epoch: [114] Total time: 0:00:33 (0.3114 s / it 
+[[32mINFO] [[32m2023-10-20 11:51:26,812] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009964 losses: 4447.9854 (5062.7824) coarse_loss: 4408.5918 (5007.6896) fine_loss: 53.9720 (55.0927)[0m
+[[32mINFO] [[32m2023-10-20 11:51:30,197] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3408.9175 (3632.6977) coarse_loss: 3322.4668 (3576.5002) fine_loss: 51.5416 (56.1976)[0m
+Epoch: [115] [  0/107] eta: 0:02:29 lr: 0.00009964 losses: 5978.4580 (5978.4580) coarse_loss: 5923.5059 (5923.5059) fine_loss: 54.9519 (54.9519) time: 1.3973 data: 0.9980 max_mem: 13509
+Epoch: [115] [106/107] eta: 0:00:00 lr: 0.00009964 losses: 3990.0867 (4904.1644) coarse_loss: 3905.1426 (4844.4662) fine_loss: 63.8640 (59.6981) time: 0.2686 data: 0.0001 max_mem: 13509
+Epoch: [115] Total time: 0:00:33 (0.3091 s / it 
+[[32mINFO] [[32m2023-10-20 11:52:03,270] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009964 losses: 3990.0867 (4904.1644) coarse_loss: 3905.1426 (4844.4662) fine_loss: 63.8640 (59.6981)[0m
+[[32mINFO] [[32m2023-10-20 11:52:06,470] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2655.0110 (2790.4373) coarse_loss: 2617.7512 (2721.4639) fine_loss: 46.7437 (68.9735)[0m
+Epoch: [116] [  0/107] eta: 0:02:32 lr: 0.00009963 losses: 5711.5015 (5711.5015) coarse_loss: 5647.4043 (5647.4043) fine_loss: 64.0971 (64.0971) time: 1.4248 data: 1.0117 max_mem: 13509
+Epoch: [116] [106/107] eta: 0:00:00 lr: 0.00009963 losses: 4857.5684 (5252.3318) coarse_loss: 4820.5347 (5195.5715) fine_loss: 53.1841 (56.7603) time: 0.2837 data: 0.0001 max_mem: 13509
+Epoch: [116] Total time: 0:00:33 (0.3106 s / it 
+[[32mINFO] [[32m2023-10-20 11:52:39,701] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009963 losses: 4857.5684 (5252.3318) coarse_loss: 4820.5347 (5195.5715) fine_loss: 53.1841 (56.7603)[0m
+[[32mINFO] [[32m2023-10-20 11:52:42,840] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3516.5291 (3316.8502) coarse_loss: 3446.8345 (3261.9218) fine_loss: 48.3737 (54.9284)[0m
+Epoch: [117] [  0/107] eta: 0:02:24 lr: 0.00009963 losses: 3614.8455 (3614.8455) coarse_loss: 3519.5496 (3519.5496) fine_loss: 95.2960 (95.2960) time: 1.3517 data: 0.9782 max_mem: 13509
+Epoch: [117] [106/107] eta: 0:00:00 lr: 0.00009963 losses: 4225.9541 (4994.8744) coarse_loss: 4152.6123 (4937.1691) fine_loss: 44.6695 (57.7053) time: 0.2864 data: 0.0001 max_mem: 13509
+Epoch: [117] Total time: 0:00:33 (0.3094 s / it 
+[[32mINFO] [[32m2023-10-20 11:53:15,946] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009963 losses: 4225.9541 (4994.8744) coarse_loss: 4152.6123 (4937.1691) fine_loss: 44.6695 (57.7053)[0m
+[[32mINFO] [[32m2023-10-20 11:53:18,983] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3541.6738 (2851.1156) coarse_loss: 3486.1311 (2788.7163) fine_loss: 50.0868 (62.3993)[0m
+Epoch: [118] [  0/107] eta: 0:02:27 lr: 0.00009962 losses: 2127.5708 (2127.5708) coarse_loss: 2040.4816 (2040.4816) fine_loss: 87.0892 (87.0892) time: 1.3793 data: 0.9798 max_mem: 13509
+Epoch: [118] [106/107] eta: 0:00:00 lr: 0.00009962 losses: 5573.2861 (5229.9717) coarse_loss: 5542.7197 (5175.5242) fine_loss: 41.0149 (54.4475) time: 0.2903 data: 0.0001 max_mem: 13509
+Epoch: [118] Total time: 0:00:33 (0.3136 s / it 
+[[32mINFO] [[32m2023-10-20 11:53:52,542] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009962 losses: 5573.2861 (5229.9717) coarse_loss: 5542.7197 (5175.5242) fine_loss: 41.0149 (54.4475)[0m
+[[32mINFO] [[32m2023-10-20 11:53:55,702] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2285.4692 (2642.3337) coarse_loss: 2251.5195 (2580.2514) fine_loss: 57.2012 (62.0823)[0m
+Epoch: [119] [  0/107] eta: 0:02:28 lr: 0.00009961 losses: 5834.8984 (5834.8984) coarse_loss: 5751.8008 (5751.8008) fine_loss: 83.0975 (83.0975) time: 1.3844 data: 1.0141 max_mem: 13509
+Epoch: [119] [106/107] eta: 0:00:00 lr: 0.00009961 losses: 6124.6440 (5358.2637) coarse_loss: 6066.8267 (5301.5003) fine_loss: 57.8174 (56.7634) time: 0.2855 data: 0.0001 max_mem: 13509
+Epoch: [119] Total time: 0:00:33 (0.3118 s / it 
+[[32mINFO] [[32m2023-10-20 11:54:29,069] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009961 losses: 6124.6440 (5358.2637) coarse_loss: 6066.8267 (5301.5003) fine_loss: 57.8174 (56.7634)[0m
+[[32mINFO] [[32m2023-10-20 11:54:32,299] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2389.6587 (2461.0059) coarse_loss: 2342.8230 (2376.4509) fine_loss: 68.7068 (84.5550)[0m
+Epoch: [120] [  0/107] eta: 0:02:29 lr: 0.00009961 losses: 3839.1787 (3839.1787) coarse_loss: 3768.4050 (3768.4050) fine_loss: 70.7737 (70.7737) time: 1.3936 data: 1.0227 max_mem: 13509
+Epoch: [120] [106/107] eta: 0:00:00 lr: 0.00009961 losses: 5359.9478 (4998.5361) coarse_loss: 5274.5635 (4941.5600) fine_loss: 52.1757 (56.9762) time: 0.2922 data: 0.0001 max_mem: 13509
+Epoch: [120] Total time: 0:00:33 (0.3112 s / it 
+[[32mINFO] [[32m2023-10-20 11:55:05,601] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009961 losses: 5359.9478 (4998.5361) coarse_loss: 5274.5635 (4941.5600) fine_loss: 52.1757 (56.9762)[0m
+[[32mINFO] [[32m2023-10-20 11:55:09,008] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2888.9714 (3200.4464) coarse_loss: 2832.2825 (3129.4346) fine_loss: 60.0263 (71.0119)[0m
+Epoch: [121] [  0/107] eta: 0:02:32 lr: 0.00009960 losses: 6490.2432 (6490.2432) coarse_loss: 6429.8525 (6429.8525) fine_loss: 60.3907 (60.3907) time: 1.4280 data: 0.9977 max_mem: 13509
+Epoch: [121] [106/107] eta: 0:00:00 lr: 0.00009960 losses: 5266.5186 (5373.2646) coarse_loss: 5229.0264 (5318.9544) fine_loss: 57.3273 (54.3103) time: 0.2792 data: 0.0001 max_mem: 13509
+Epoch: [121] Total time: 0:00:33 (0.3144 s / it 
+[[32mINFO] [[32m2023-10-20 11:55:42,647] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009960 losses: 5266.5186 (5373.2646) coarse_loss: 5229.0264 (5318.9544) fine_loss: 57.3273 (54.3103)[0m
+[[32mINFO] [[32m2023-10-20 11:55:45,720] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2344.9670 (3295.6969) coarse_loss: 2314.4717 (3235.2542) fine_loss: 52.8097 (60.4427)[0m
+Epoch: [122] [  0/107] eta: 0:02:23 lr: 0.00009959 losses: 6357.8794 (6357.8794) coarse_loss: 6321.0596 (6321.0596) fine_loss: 36.8196 (36.8196) time: 1.3446 data: 0.7271 max_mem: 13509
+Epoch: [122] [106/107] eta: 0:00:00 lr: 0.00009959 losses: 4156.9287 (5168.0595) coarse_loss: 4106.8867 (5110.8316) fine_loss: 59.0985 (57.2279) time: 0.2755 data: 0.0001 max_mem: 13509
+Epoch: [122] Total time: 0:00:33 (0.3091 s / it 
+[[32mINFO] [[32m2023-10-20 11:56:18,797] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009959 losses: 4156.9287 (5168.0595) coarse_loss: 4106.8867 (5110.8316) fine_loss: 59.0985 (57.2279)[0m
+[[32mINFO] [[32m2023-10-20 11:56:22,115] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2893.4468 (3497.5824) coarse_loss: 2864.9932 (3447.3299) fine_loss: 43.2685 (50.2525)[0m
+Epoch: [123] [  0/107] eta: 0:02:11 lr: 0.00009959 losses: 3306.7280 (3306.7280) coarse_loss: 3214.1304 (3214.1304) fine_loss: 92.5977 (92.5977) time: 1.2267 data: 0.8318 max_mem: 13509
+Epoch: [123] [106/107] eta: 0:00:00 lr: 0.00009959 losses: 3992.7112 (4925.4673) coarse_loss: 3942.5420 (4867.4376) fine_loss: 53.0732 (58.0297) time: 0.2758 data: 0.0001 max_mem: 13509
+Epoch: [123] Total time: 0:00:32 (0.3068 s / it 
+[[32mINFO] [[32m2023-10-20 11:56:54,946] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009959 losses: 3992.7112 (4925.4673) coarse_loss: 3942.5420 (4867.4376) fine_loss: 53.0732 (58.0297)[0m
+[[32mINFO] [[32m2023-10-20 11:56:58,165] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2215.4963 (3097.7774) coarse_loss: 2182.9973 (3029.9533) fine_loss: 56.8148 (67.8241)[0m
+Epoch: [124] [  0/107] eta: 0:02:24 lr: 0.00009958 losses: 3285.7905 (3285.7905) coarse_loss: 3254.6987 (3254.6987) fine_loss: 31.0917 (31.0917) time: 1.3503 data: 0.8727 max_mem: 13509
+Epoch: [124] [106/107] eta: 0:00:00 lr: 0.00009958 losses: 5183.1016 (5241.1188) coarse_loss: 5137.1348 (5185.9761) fine_loss: 45.9668 (55.1428) time: 0.2958 data: 0.0001 max_mem: 13509
+Epoch: [124] Total time: 0:00:33 (0.3134 s / it 
+[[32mINFO] [[32m2023-10-20 11:57:31,696] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009958 losses: 5183.1016 (5241.1188) coarse_loss: 5137.1348 (5185.9761) fine_loss: 45.9668 (55.1428)[0m
+[[32mINFO] [[32m2023-10-20 11:57:34,854] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2151.4651 (2675.9785) coarse_loss: 2103.6067 (2616.8597) fine_loss: 47.8584 (59.1187)[0m
+Epoch: [125] [  0/107] eta: 0:02:23 lr: 0.00009957 losses: 7745.3716 (7745.3716) coarse_loss: 7715.5928 (7715.5928) fine_loss: 29.7788 (29.7788) time: 1.3449 data: 0.7301 max_mem: 13509
+Epoch: [125] [106/107] eta: 0:00:00 lr: 0.00009957 losses: 5547.3979 (5464.4774) coarse_loss: 5461.3916 (5408.1869) fine_loss: 59.3029 (56.2905) time: 0.2955 data: 0.0001 max_mem: 13509
+Epoch: [125] Total time: 0:00:33 (0.3135 s / it 
+[[32mINFO] [[32m2023-10-20 11:58:08,399] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009957 losses: 5547.3979 (5464.4774) coarse_loss: 5461.3916 (5408.1869) fine_loss: 59.3029 (56.2905)[0m
+[[32mINFO] [[32m2023-10-20 11:58:11,699] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2625.4526 (3342.9165) coarse_loss: 2508.9075 (3287.6926) fine_loss: 42.7457 (55.2239)[0m
+Epoch: [126] [  0/107] eta: 0:02:39 lr: 0.00009957 losses: 5568.8525 (5568.8525) coarse_loss: 5542.4512 (5542.4512) fine_loss: 26.4015 (26.4015) time: 1.4862 data: 1.0309 max_mem: 13509
+Epoch: [126] [106/107] eta: 0:00:00 lr: 0.00009957 losses: 4144.9678 (4885.2939) coarse_loss: 4096.5674 (4829.8018) fine_loss: 61.6434 (55.4921) time: 0.2861 data: 0.0001 max_mem: 13509
+Epoch: [126] Total time: 0:00:33 (0.3112 s / it 
+[[32mINFO] [[32m2023-10-20 11:58:44,996] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009957 losses: 4144.9678 (4885.2939) coarse_loss: 4096.5674 (4829.8018) fine_loss: 61.6434 (55.4921)[0m
+[[32mINFO] [[32m2023-10-20 11:58:48,321] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2677.3401 (2882.0956) coarse_loss: 2654.6772 (2816.1528) fine_loss: 47.6656 (65.9428)[0m
+Epoch: [127] [  0/107] eta: 0:02:31 lr: 0.00009956 losses: 6979.3086 (6979.3086) coarse_loss: 6930.8491 (6930.8491) fine_loss: 48.4594 (48.4594) time: 1.4179 data: 1.0322 max_mem: 13509
+Epoch: [127] [106/107] eta: 0:00:00 lr: 0.00009956 losses: 5082.5913 (5096.2926) coarse_loss: 5027.4380 (5041.2371) fine_loss: 55.2111 (55.0555) time: 0.2883 data: 0.0001 max_mem: 13509
+Epoch: [127] Total time: 0:00:33 (0.3161 s / it 
+[[32mINFO] [[32m2023-10-20 11:59:22,150] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009956 losses: 5082.5913 (5096.2926) coarse_loss: 5027.4380 (5041.2371) fine_loss: 55.2111 (55.0555)[0m
+[[32mINFO] [[32m2023-10-20 11:59:25,433] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3210.5161 (3472.3459) coarse_loss: 3141.0776 (3408.7577) fine_loss: 57.9472 (63.5882)[0m
+Epoch: [128] [  0/107] eta: 0:02:29 lr: 0.00009955 losses: 4372.0654 (4372.0654) coarse_loss: 4310.2861 (4310.2861) fine_loss: 61.7795 (61.7795) time: 1.3981 data: 1.0119 max_mem: 13509
+Epoch: [128] [106/107] eta: 0:00:00 lr: 0.00009955 losses: 3976.6038 (5033.9470) coarse_loss: 3904.1943 (4978.2825) fine_loss: 51.4946 (55.6644) time: 0.2885 data: 0.0001 max_mem: 13509
+Epoch: [128] Total time: 0:00:33 (0.3106 s / it 
+[[32mINFO] [[32m2023-10-20 11:59:58,667] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009955 losses: 3976.6038 (5033.9470) coarse_loss: 3904.1943 (4978.2825) fine_loss: 51.4946 (55.6644)[0m
+[[32mINFO] [[32m2023-10-20 12:00:01,900] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2453.9602 (2528.7921) coarse_loss: 2378.9023 (2473.4946) fine_loss: 40.3569 (55.2975)[0m
+Epoch: [129] [  0/107] eta: 0:02:30 lr: 0.00009954 losses: 5259.7231 (5259.7231) coarse_loss: 5196.0596 (5196.0596) fine_loss: 63.6635 (63.6635) time: 1.4042 data: 1.0150 max_mem: 13509
+Epoch: [129] [106/107] eta: 0:00:00 lr: 0.00009954 losses: 4661.1782 (5030.0666) coarse_loss: 4612.0986 (4973.6473) fine_loss: 59.5111 (56.4193) time: 0.2788 data: 0.0001 max_mem: 13509
+Epoch: [129] Total time: 0:00:33 (0.3105 s / it 
+[[32mINFO] [[32m2023-10-20 12:00:35,130] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009954 losses: 4661.1782 (5030.0666) coarse_loss: 4612.0986 (4973.6473) fine_loss: 59.5111 (56.4193)[0m
+[[32mINFO] [[32m2023-10-20 12:00:38,519] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3456.3926 (3824.4027) coarse_loss: 3407.1584 (3774.7928) fine_loss: 45.1045 (49.6099)[0m
+Epoch: [130] [  0/107] eta: 0:02:26 lr: 0.00009954 losses: 6368.2451 (6368.2451) coarse_loss: 6277.6558 (6277.6558) fine_loss: 90.5892 (90.5892) time: 1.3716 data: 0.9603 max_mem: 13509
+Epoch: [130] [106/107] eta: 0:00:00 lr: 0.00009954 losses: 5648.6450 (5361.8041) coarse_loss: 5602.9736 (5308.1420) fine_loss: 54.3012 (53.6621) time: 0.2752 data: 0.0001 max_mem: 13509
+Epoch: [130] Total time: 0:00:33 (0.3150 s / it 
+[[32mINFO] [[32m2023-10-20 12:01:12,224] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009954 losses: 5648.6450 (5361.8041) coarse_loss: 5602.9736 (5308.1420) fine_loss: 54.3012 (53.6621)[0m
+[[32mINFO] [[32m2023-10-20 12:01:15,527] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2906.9236 (3106.5287) coarse_loss: 2828.1831 (3046.5373) fine_loss: 53.6557 (59.9914)[0m
+Epoch: [131] [  0/107] eta: 0:02:22 lr: 0.00009953 losses: 3000.3926 (3000.3926) coarse_loss: 2873.0645 (2873.0645) fine_loss: 127.3282 (127.3282) time: 1.3312 data: 0.8923 max_mem: 13509
+Epoch: [131] [106/107] eta: 0:00:00 lr: 0.00009953 losses: 5751.1934 (4862.4066) coarse_loss: 5705.6709 (4806.0094) fine_loss: 48.4647 (56.3973) time: 0.2994 data: 0.0001 max_mem: 13509
+Epoch: [131] Total time: 0:00:32 (0.3048 s / it 
+[[32mINFO] [[32m2023-10-20 12:01:48,141] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009953 losses: 5751.1934 (4862.4066) coarse_loss: 5705.6709 (4806.0094) fine_loss: 48.4647 (56.3973)[0m
+[[32mINFO] [[32m2023-10-20 12:01:51,448] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3079.9060 (3594.3521) coarse_loss: 3048.3237 (3543.6487) fine_loss: 37.5783 (50.7035)[0m
+Epoch: [132] [  0/107] eta: 0:02:26 lr: 0.00009952 losses: 6076.0938 (6076.0938) coarse_loss: 6028.8257 (6028.8257) fine_loss: 47.2679 (47.2679) time: 1.3703 data: 0.9733 max_mem: 13509
+Epoch: [132] [106/107] eta: 0:00:00 lr: 0.00009952 losses: 5035.2065 (5130.4988) coarse_loss: 4979.1299 (5077.8096) fine_loss: 63.1749 (52.6891) time: 0.2863 data: 0.0001 max_mem: 13509
+Epoch: [132] Total time: 0:00:33 (0.3123 s / it 
+[[32mINFO] [[32m2023-10-20 12:02:24,870] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009952 losses: 5035.2065 (5130.4988) coarse_loss: 4979.1299 (5077.8096) fine_loss: 63.1749 (52.6891)[0m
+[[32mINFO] [[32m2023-10-20 12:02:28,137] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2872.8206 (3652.3545) coarse_loss: 2844.4902 (3599.2584) fine_loss: 44.1792 (53.0961)[0m
+Epoch: [133] [  0/107] eta: 0:02:23 lr: 0.00009952 losses: 6429.6494 (6429.6494) coarse_loss: 6370.2227 (6370.2227) fine_loss: 59.4267 (59.4267) time: 1.3382 data: 0.7582 max_mem: 13509
+Epoch: [133] [106/107] eta: 0:00:00 lr: 0.00009952 losses: 4481.2622 (5310.4665) coarse_loss: 4431.3926 (5255.2814) fine_loss: 42.9670 (55.1851) time: 0.2833 data: 0.0001 max_mem: 13509
+Epoch: [133] Total time: 0:00:32 (0.3074 s / it 
+[[32mINFO] [[32m2023-10-20 12:03:01,030] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009952 losses: 4481.2622 (5310.4665) coarse_loss: 4431.3926 (5255.2814) fine_loss: 42.9670 (55.1851)[0m
+[[32mINFO] [[32m2023-10-20 12:03:04,297] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2716.0991 (3232.4787) coarse_loss: 2655.4209 (3176.2138) fine_loss: 54.8040 (56.2649)[0m
+Epoch: [134] [  0/107] eta: 0:02:17 lr: 0.00009951 losses: 935.7490 (935.7490) coarse_loss: 813.1912 (813.1912) fine_loss: 122.5578 (122.5578) time: 1.2833 data: 0.9162 max_mem: 13509
+Epoch: [134] [106/107] eta: 0:00:00 lr: 0.00009951 losses: 4642.6108 (4914.6612) coarse_loss: 4583.2734 (4859.2095) fine_loss: 45.9258 (55.4517) time: 0.2832 data: 0.0001 max_mem: 13509
+Epoch: [134] Total time: 0:00:32 (0.3064 s / it 
+[[32mINFO] [[32m2023-10-20 12:03:37,082] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009951 losses: 4642.6108 (4914.6612) coarse_loss: 4583.2734 (4859.2095) fine_loss: 45.9258 (55.4517)[0m
+[[32mINFO] [[32m2023-10-20 12:03:40,267] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2137.9280 (2582.5503) coarse_loss: 2070.7258 (2526.8907) fine_loss: 55.3177 (55.6597)[0m
+Epoch: [135] [  0/107] eta: 0:02:16 lr: 0.00009950 losses: 4743.7705 (4743.7705) coarse_loss: 4705.1934 (4705.1934) fine_loss: 38.5770 (38.5770) time: 1.2781 data: 0.7142 max_mem: 13509
+Epoch: [135] [106/107] eta: 0:00:00 lr: 0.00009950 losses: 5215.2383 (4825.9829) coarse_loss: 5173.8667 (4772.9592) fine_loss: 46.1852 (53.0237) time: 0.2994 data: 0.0001 max_mem: 13509
+Epoch: [135] Total time: 0:00:33 (0.3085 s / it 
+[[32mINFO] [[32m2023-10-20 12:04:13,277] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009950 losses: 5215.2383 (4825.9829) coarse_loss: 5173.8667 (4772.9592) fine_loss: 46.1852 (53.0237)[0m
+[[32mINFO] [[32m2023-10-20 12:04:16,402] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2384.3108 (2742.0789) coarse_loss: 2345.0586 (2669.1298) fine_loss: 45.2359 (72.9491)[0m
+Epoch: [136] [  0/107] eta: 0:02:20 lr: 0.00009949 losses: 4654.8296 (4654.8296) coarse_loss: 4612.3599 (4612.3599) fine_loss: 42.4697 (42.4697) time: 1.3154 data: 0.8130 max_mem: 13509
+Epoch: [136] [106/107] eta: 0:00:00 lr: 0.00009949 losses: 5044.4756 (5005.2474) coarse_loss: 4953.5283 (4950.4521) fine_loss: 51.9931 (54.7952) time: 0.2860 data: 0.0001 max_mem: 13509
+Epoch: [136] Total time: 0:00:33 (0.3112 s / it 
+[[32mINFO] [[32m2023-10-20 12:04:49,706] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009949 losses: 5044.4756 (5005.2474) coarse_loss: 4953.5283 (4950.4521) fine_loss: 51.9931 (54.7952)[0m
+[[32mINFO] [[32m2023-10-20 12:04:53,018] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2480.2563 (2924.5052) coarse_loss: 2440.8555 (2868.3920) fine_loss: 51.4341 (56.1132)[0m
+Epoch: [137] [  0/107] eta: 0:02:21 lr: 0.00009949 losses: 3424.0969 (3424.0969) coarse_loss: 3385.7827 (3385.7827) fine_loss: 38.3143 (38.3143) time: 1.3265 data: 0.7643 max_mem: 13509
+Epoch: [137] [106/107] eta: 0:00:00 lr: 0.00009949 losses: 4869.1973 (5017.4613) coarse_loss: 4827.2461 (4966.4396) fine_loss: 44.5197 (51.0217) time: 0.2829 data: 0.0001 max_mem: 13509
+Epoch: [137] Total time: 0:00:33 (0.3109 s / it 
+[[32mINFO] [[32m2023-10-20 12:05:26,290] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009949 losses: 4869.1973 (5017.4613) coarse_loss: 4827.2461 (4966.4396) fine_loss: 44.5197 (51.0217)[0m
+[[32mINFO] [[32m2023-10-20 12:05:29,557] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3617.7549 (3534.1192) coarse_loss: 3537.3772 (3478.0304) fine_loss: 51.8669 (56.0887)[0m
+Epoch: [138] [  0/107] eta: 0:02:29 lr: 0.00009948 losses: 4570.2739 (4570.2739) coarse_loss: 4523.2583 (4523.2583) fine_loss: 47.0157 (47.0157) time: 1.3979 data: 0.9710 max_mem: 13509
+Epoch: [138] [106/107] eta: 0:00:00 lr: 0.00009948 losses: 4703.1978 (4788.9487) coarse_loss: 4646.7261 (4733.8511) fine_loss: 53.0055 (55.0976) time: 0.2850 data: 0.0001 max_mem: 13509
+Epoch: [138] Total time: 0:00:32 (0.3084 s / it 
+[[32mINFO] [[32m2023-10-20 12:06:02,554] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009948 losses: 4703.1978 (4788.9487) coarse_loss: 4646.7261 (4733.8511) fine_loss: 53.0055 (55.0976)[0m
+[[32mINFO] [[32m2023-10-20 12:06:05,862] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2576.1099 (2931.0421) coarse_loss: 2545.4104 (2885.3400) fine_loss: 40.8559 (45.7020)[0m
+Epoch: [139] [  0/107] eta: 0:02:20 lr: 0.00009947 losses: 4961.3481 (4961.3481) coarse_loss: 4891.9150 (4891.9150) fine_loss: 69.4332 (69.4332) time: 1.3176 data: 0.8035 max_mem: 13509
+Epoch: [139] [106/107] eta: 0:00:00 lr: 0.00009947 losses: 5237.5278 (4817.5503) coarse_loss: 5189.9478 (4762.8542) fine_loss: 48.0370 (54.6961) time: 0.2805 data: 0.0001 max_mem: 13509
+Epoch: [139] Total time: 0:00:32 (0.3067 s / it 
+[[32mINFO] [[32m2023-10-20 12:06:38,682] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009947 losses: 5237.5278 (4817.5503) coarse_loss: 5189.9478 (4762.8542) fine_loss: 48.0370 (54.6961)[0m
+[[32mINFO] [[32m2023-10-20 12:06:42,058] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3741.6497 (4457.3161) coarse_loss: 3712.2544 (4409.0187) fine_loss: 42.9885 (48.2974)[0m
+Epoch: [140] [  0/107] eta: 0:02:32 lr: 0.00009946 losses: 7025.7798 (7025.7798) coarse_loss: 6974.6284 (6974.6284) fine_loss: 51.1512 (51.1512) time: 1.4230 data: 1.0156 max_mem: 13509
+Epoch: [140] [106/107] eta: 0:00:00 lr: 0.00009946 losses: 5207.1279 (5194.2001) coarse_loss: 5161.0825 (5139.2713) fine_loss: 50.1775 (54.9288) time: 0.2788 data: 0.0001 max_mem: 13509
+Epoch: [140] Total time: 0:00:33 (0.3109 s / it 
+[[32mINFO] [[32m2023-10-20 12:07:15,323] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009946 losses: 5207.1279 (5194.2001) coarse_loss: 5161.0825 (5139.2713) fine_loss: 50.1775 (54.9288)[0m
+[[32mINFO] [[32m2023-10-20 12:07:18,579] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2668.7832 (2879.8614) coarse_loss: 2636.2900 (2826.4836) fine_loss: 47.6849 (53.3778)[0m
+Epoch: [141] [  0/107] eta: 0:02:30 lr: 0.00009946 losses: 6934.0078 (6934.0078) coarse_loss: 6880.1504 (6880.1504) fine_loss: 53.8572 (53.8572) time: 1.4049 data: 0.9622 max_mem: 13509
+Epoch: [141] [106/107] eta: 0:00:00 lr: 0.00009946 losses: 4150.2305 (5291.2575) coarse_loss: 4113.3867 (5239.8311) fine_loss: 48.7361 (51.4264) time: 0.2793 data: 0.0001 max_mem: 13509
+Epoch: [141] Total time: 0:00:33 (0.3116 s / it 
+[[32mINFO] [[32m2023-10-20 12:07:51,918] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009946 losses: 4150.2305 (5291.2575) coarse_loss: 4113.3867 (5239.8311) fine_loss: 48.7361 (51.4264)[0m
+[[32mINFO] [[32m2023-10-20 12:07:55,205] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2925.7292 (3342.5842) coarse_loss: 2900.7805 (3292.5121) fine_loss: 47.3499 (50.0721)[0m
+Epoch: [142] [  0/107] eta: 0:02:29 lr: 0.00009945 losses: 5473.4395 (5473.4395) coarse_loss: 5424.5137 (5424.5137) fine_loss: 48.9255 (48.9255) time: 1.3972 data: 0.9889 max_mem: 13509
+Epoch: [142] [106/107] eta: 0:00:00 lr: 0.00009945 losses: 4549.7202 (5076.7558) coarse_loss: 4481.3813 (5022.9775) fine_loss: 44.9195 (53.7783) time: 0.2806 data: 0.0001 max_mem: 13509
+Epoch: [142] Total time: 0:00:32 (0.3070 s / it 
+[[32mINFO] [[32m2023-10-20 12:08:28,061] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009945 losses: 4549.7202 (5076.7558) coarse_loss: 4481.3813 (5022.9775) fine_loss: 44.9195 (53.7783)[0m
+[[32mINFO] [[32m2023-10-20 12:08:31,537] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3175.6172 (3334.7158) coarse_loss: 3096.7559 (3277.5740) fine_loss: 41.7045 (57.1419)[0m
+Epoch: [143] [  0/107] eta: 0:02:29 lr: 0.00009944 losses: 6867.0059 (6867.0059) coarse_loss: 6801.6357 (6801.6357) fine_loss: 65.3703 (65.3703) time: 1.3952 data: 0.9569 max_mem: 13509
+Epoch: [143] [106/107] eta: 0:00:00 lr: 0.00009944 losses: 4393.2661 (4833.4008) coarse_loss: 4343.1963 (4777.4799) fine_loss: 53.6958 (55.9209) time: 0.2775 data: 0.0001 max_mem: 13509
+Epoch: [143] Total time: 0:00:32 (0.3067 s / it 
+[[32mINFO] [[32m2023-10-20 12:09:04,358] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009944 losses: 4393.2661 (4833.4008) coarse_loss: 4343.1963 (4777.4799) fine_loss: 53.6958 (55.9209)[0m
+[[32mINFO] [[32m2023-10-20 12:09:07,622] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2396.0347 (3278.5723) coarse_loss: 2297.9121 (3217.2107) fine_loss: 52.9986 (61.3617)[0m
+Epoch: [144] [  0/107] eta: 0:02:28 lr: 0.00009943 losses: 4266.0767 (4266.0767) coarse_loss: 4196.2334 (4196.2334) fine_loss: 69.8431 (69.8431) time: 1.3915 data: 1.0438 max_mem: 13509
+Epoch: [144] [106/107] eta: 0:00:00 lr: 0.00009943 losses: 4153.8096 (5014.0250) coarse_loss: 4121.2891 (4960.0889) fine_loss: 50.8726 (53.9362) time: 0.2741 data: 0.0001 max_mem: 13509
+Epoch: [144] Total time: 0:00:33 (0.3098 s / it 
+[[32mINFO] [[32m2023-10-20 12:09:40,768] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009943 losses: 4153.8096 (5014.0250) coarse_loss: 4121.2891 (4960.0889) fine_loss: 50.8726 (53.9362)[0m
+[[32mINFO] [[32m2023-10-20 12:09:43,976] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1933.9679 (2451.8984) coarse_loss: 1897.2219 (2402.9534) fine_loss: 53.0537 (48.9451)[0m
+Epoch: [145] [  0/107] eta: 0:02:28 lr: 0.00009942 losses: 4950.4780 (4950.4780) coarse_loss: 4892.2188 (4892.2188) fine_loss: 58.2594 (58.2594) time: 1.3834 data: 1.0076 max_mem: 13509
+Epoch: [145] [106/107] eta: 0:00:00 lr: 0.00009942 losses: 4764.6665 (4936.6433) coarse_loss: 4719.1992 (4885.5986) fine_loss: 51.4897 (51.0446) time: 0.2766 data: 0.0001 max_mem: 13509
+Epoch: [145] Total time: 0:00:33 (0.3091 s / it 
+[[32mINFO] [[32m2023-10-20 12:10:17,049] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009942 losses: 4764.6665 (4936.6433) coarse_loss: 4719.1992 (4885.5986) fine_loss: 51.4897 (51.0446)[0m
+[[32mINFO] [[32m2023-10-20 12:10:20,261] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3683.6978 (3403.6059) coarse_loss: 3613.1978 (3346.1724) fine_loss: 50.9664 (57.4335)[0m
+Epoch: [146] [  0/107] eta: 0:02:26 lr: 0.00009942 losses: 4971.9282 (4971.9282) coarse_loss: 4885.0615 (4885.0615) fine_loss: 86.8667 (86.8667) time: 1.3708 data: 0.9219 max_mem: 13509
+Epoch: [146] [106/107] eta: 0:00:00 lr: 0.00009942 losses: 3689.7585 (5020.2353) coarse_loss: 3665.7302 (4968.6263) fine_loss: 53.2602 (51.6089) time: 0.2795 data: 0.0001 max_mem: 13509
+Epoch: [146] Total time: 0:00:32 (0.3071 s / it 
+[[32mINFO] [[32m2023-10-20 12:10:53,126] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009942 losses: 3689.7585 (5020.2353) coarse_loss: 3665.7302 (4968.6263) fine_loss: 53.2602 (51.6089)[0m
+[[32mINFO] [[32m2023-10-20 12:10:56,252] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2450.8552 (2786.7087) coarse_loss: 2378.3735 (2706.2059) fine_loss: 69.6234 (80.5028)[0m
+Epoch: [147] [  0/107] eta: 0:02:24 lr: 0.00009941 losses: 2989.5564 (2989.5564) coarse_loss: 2954.5530 (2954.5530) fine_loss: 35.0034 (35.0034) time: 1.3518 data: 0.8968 max_mem: 13509
+Epoch: [147] [106/107] eta: 0:00:00 lr: 0.00009941 losses: 4230.0000 (5070.6316) coarse_loss: 4190.0713 (5022.2519) fine_loss: 50.9025 (48.3797) time: 0.2795 data: 0.0001 max_mem: 13509
+Epoch: [147] Total time: 0:00:33 (0.3127 s / it 
+[[32mINFO] [[32m2023-10-20 12:11:29,711] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009941 losses: 4230.0000 (5070.6316) coarse_loss: 4190.0713 (5022.2519) fine_loss: 50.9025 (48.3797)[0m
+[[32mINFO] [[32m2023-10-20 12:11:32,717] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2903.2437 (2602.9025) coarse_loss: 2811.0581 (2541.9026) fine_loss: 47.1634 (60.9999)[0m
+Epoch: [148] [  0/107] eta: 0:02:22 lr: 0.00009940 losses: 5744.7524 (5744.7524) coarse_loss: 5707.1172 (5707.1172) fine_loss: 37.6352 (37.6352) time: 1.3341 data: 0.7013 max_mem: 13509
+Epoch: [148] [106/107] eta: 0:00:00 lr: 0.00009940 losses: 6378.3828 (5179.0000) coarse_loss: 6339.7622 (5126.2436) fine_loss: 55.8695 (52.7564) time: 0.2851 data: 0.0001 max_mem: 13509
+Epoch: [148] Total time: 0:00:32 (0.3079 s / it 
+[[32mINFO] [[32m2023-10-20 12:12:05,662] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009940 losses: 6378.3828 (5179.0000) coarse_loss: 6339.7622 (5126.2436) fine_loss: 55.8695 (52.7564)[0m
+[[32mINFO] [[32m2023-10-20 12:12:08,945] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2996.1055 (2995.8699) coarse_loss: 2962.7227 (2958.8050) fine_loss: 33.0933 (37.0650)[0m
+Epoch: [149] [  0/107] eta: 0:02:20 lr: 0.00009939 losses: 3463.9631 (3463.9631) coarse_loss: 3415.6953 (3415.6953) fine_loss: 48.2678 (48.2678) time: 1.3122 data: 0.8547 max_mem: 13509
+Epoch: [149] [106/107] eta: 0:00:00 lr: 0.00009939 losses: 3623.9819 (5197.5370) coarse_loss: 3592.2932 (5147.1360) fine_loss: 37.2120 (50.4010) time: 0.2783 data: 0.0001 max_mem: 13509
+Epoch: [149] Total time: 0:00:33 (0.3099 s / it 
+[[32mINFO] [[32m2023-10-20 12:12:42,101] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009939 losses: 3623.9819 (5197.5370) coarse_loss: 3592.2932 (5147.1360) fine_loss: 37.2120 (50.4010)[0m
+[[32mINFO] [[32m2023-10-20 12:12:45,339] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3836.3232 (3798.8021) coarse_loss: 3800.4287 (3751.2090) fine_loss: 42.3400 (47.5931)[0m
+Epoch: [150] [  0/107] eta: 0:02:16 lr: 0.00009938 losses: 3922.6677 (3922.6677) coarse_loss: 3839.1890 (3839.1890) fine_loss: 83.4788 (83.4788) time: 1.2786 data: 0.8858 max_mem: 13509
+Epoch: [150] [106/107] eta: 0:00:00 lr: 0.00009938 losses: 5205.5820 (4805.4475) coarse_loss: 5164.5039 (4750.1248) fine_loss: 49.1099 (55.3227) time: 0.2851 data: 0.0001 max_mem: 13509
+Epoch: [150] Total time: 0:00:32 (0.3031 s / it 
+[[32mINFO] [[32m2023-10-20 12:13:17,772] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009938 losses: 5205.5820 (4805.4475) coarse_loss: 5164.5039 (4750.1248) fine_loss: 49.1099 (55.3227)[0m
+[[32mINFO] [[32m2023-10-20 12:13:21,019] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2478.0876 (2935.8936) coarse_loss: 2444.2493 (2879.4329) fine_loss: 54.0386 (56.4607)[0m
+Epoch: [151] [  0/107] eta: 0:02:26 lr: 0.00009938 losses: 6483.9204 (6483.9204) coarse_loss: 6454.1729 (6454.1729) fine_loss: 29.7475 (29.7475) time: 1.3713 data: 0.9053 max_mem: 13509
+Epoch: [151] [106/107] eta: 0:00:00 lr: 0.00009938 losses: 4858.4331 (5118.3383) coarse_loss: 4833.2871 (5067.3558) fine_loss: 42.5603 (50.9825) time: 0.2893 data: 0.0001 max_mem: 13509
+Epoch: [151] Total time: 0:00:33 (0.3107 s / it 
+[[32mINFO] [[32m2023-10-20 12:13:54,266] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009938 losses: 4858.4331 (5118.3383) coarse_loss: 4833.2871 (5067.3558) fine_loss: 42.5603 (50.9825)[0m
+[[32mINFO] [[32m2023-10-20 12:13:57,488] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2129.8081 (2838.2237) coarse_loss: 2091.7593 (2784.7329) fine_loss: 42.9418 (53.4907)[0m
+Epoch: [152] [  0/107] eta: 0:02:25 lr: 0.00009937 losses: 3657.2671 (3657.2671) coarse_loss: 3540.3640 (3540.3640) fine_loss: 116.9030 (116.9030) time: 1.3579 data: 0.9937 max_mem: 13509
+Epoch: [152] [106/107] eta: 0:00:00 lr: 0.00009937 losses: 5355.0723 (4869.6221) coarse_loss: 5298.1758 (4817.5987) fine_loss: 49.0072 (52.0234) time: 0.2822 data: 0.0001 max_mem: 13509
+Epoch: [152] Total time: 0:00:32 (0.3079 s / it 
+[[32mINFO] [[32m2023-10-20 12:14:30,433] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009937 losses: 5355.0723 (4869.6221) coarse_loss: 5298.1758 (4817.5987) fine_loss: 49.0072 (52.0234)[0m
+[[32mINFO] [[32m2023-10-20 12:14:33,535] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2417.8459 (2421.6551) coarse_loss: 2352.9126 (2355.3082) fine_loss: 59.9349 (66.3469)[0m
+Epoch: [153] [  0/107] eta: 0:02:23 lr: 0.00009936 losses: 5375.2285 (5375.2285) coarse_loss: 5313.3271 (5313.3271) fine_loss: 61.9012 (61.9012) time: 1.3400 data: 0.8751 max_mem: 13509
+Epoch: [153] [106/107] eta: 0:00:00 lr: 0.00009936 losses: 4159.6875 (4936.8210) coarse_loss: 4094.8699 (4885.5075) fine_loss: 52.5339 (51.3134) time: 0.2770 data: 0.0001 max_mem: 13509
+Epoch: [153] Total time: 0:00:33 (0.3108 s / it 
+[[32mINFO] [[32m2023-10-20 12:15:06,796] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009936 losses: 4159.6875 (4936.8210) coarse_loss: 4094.8699 (4885.5075) fine_loss: 52.5339 (51.3134)[0m
+[[32mINFO] [[32m2023-10-20 12:15:10,113] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3380.4998 (3528.1020) coarse_loss: 3330.8828 (3475.2151) fine_loss: 49.6170 (52.8870)[0m
+Epoch: [154] [  0/107] eta: 0:02:34 lr: 0.00009935 losses: 4352.3516 (4352.3516) coarse_loss: 4318.9053 (4318.9053) fine_loss: 33.4464 (33.4464) time: 1.4478 data: 1.0365 max_mem: 13509
+Epoch: [154] [106/107] eta: 0:00:00 lr: 0.00009935 losses: 5136.8408 (5190.2728) coarse_loss: 5071.5723 (5139.6905) fine_loss: 51.6195 (50.5823) time: 0.2825 data: 0.0001 max_mem: 13509
+Epoch: [154] Total time: 0:00:33 (0.3148 s / it 
+[[32mINFO] [[32m2023-10-20 12:15:43,799] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009935 losses: 5136.8408 (5190.2728) coarse_loss: 5071.5723 (5139.6905) fine_loss: 51.6195 (50.5823)[0m
+[[32mINFO] [[32m2023-10-20 12:15:46,982] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3296.3550 (3120.9477) coarse_loss: 3229.0630 (3071.4612) fine_loss: 47.3629 (49.4864)[0m
+Epoch: [155] [  0/107] eta: 0:02:31 lr: 0.00009934 losses: 6227.7676 (6227.7676) coarse_loss: 6179.1465 (6179.1465) fine_loss: 48.6213 (48.6213) time: 1.4148 data: 0.7717 max_mem: 13509
+Epoch: [155] [106/107] eta: 0:00:00 lr: 0.00009934 losses: 4732.8008 (4918.9683) coarse_loss: 4697.7627 (4864.4396) fine_loss: 53.2531 (54.5287) time: 0.2813 data: 0.0001 max_mem: 13509
+Epoch: [155] Total time: 0:00:32 (0.3062 s / it 
+[[32mINFO] [[32m2023-10-20 12:16:19,743] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009934 losses: 4732.8008 (4918.9683) coarse_loss: 4697.7627 (4864.4396) fine_loss: 53.2531 (54.5287)[0m
+[[32mINFO] [[32m2023-10-20 12:16:22,765] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1925.0292 (1999.3481) coarse_loss: 1867.0012 (1933.8779) fine_loss: 46.7520 (65.4701)[0m
+Epoch: [156] [  0/107] eta: 0:02:22 lr: 0.00009933 losses: 4231.3779 (4231.3779) coarse_loss: 4183.0059 (4183.0059) fine_loss: 48.3720 (48.3720) time: 1.3349 data: 0.9196 max_mem: 13509
+Epoch: [156] [106/107] eta: 0:00:00 lr: 0.00009933 losses: 5808.1279 (5315.0417) coarse_loss: 5763.6787 (5264.2631) fine_loss: 46.6342 (50.7786) time: 0.2863 data: 0.0001 max_mem: 13509
+Epoch: [156] Total time: 0:00:33 (0.3122 s / it 
+[[32mINFO] [[32m2023-10-20 12:16:56,423] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009933 losses: 5808.1279 (5315.0417) coarse_loss: 5763.6787 (5264.2631) fine_loss: 46.6342 (50.7786)[0m
+[[32mINFO] [[32m2023-10-20 12:16:59,624] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1935.4644 (2855.4146) coarse_loss: 1886.4261 (2805.4918) fine_loss: 41.2155 (49.9228)[0m
+Epoch: [157] [  0/107] eta: 0:02:27 lr: 0.00009933 losses: 3181.1787 (3181.1787) coarse_loss: 3124.8735 (3124.8735) fine_loss: 56.3052 (56.3052) time: 1.3809 data: 1.0020 max_mem: 13509
+Epoch: [157] [106/107] eta: 0:00:00 lr: 0.00009933 losses: 5381.3706 (5057.7443) coarse_loss: 5349.2441 (5008.0806) fine_loss: 46.6506 (49.6638) time: 0.2922 data: 0.0001 max_mem: 13509
+Epoch: [157] Total time: 0:00:33 (0.3110 s / it 
+[[32mINFO] [[32m2023-10-20 12:17:32,898] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009933 losses: 5381.3706 (5057.7443) coarse_loss: 5349.2441 (5008.0806) fine_loss: 46.6506 (49.6638)[0m
+[[32mINFO] [[32m2023-10-20 12:17:36,173] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2510.7739 (2946.2238) coarse_loss: 2481.3921 (2891.8563) fine_loss: 37.1541 (54.3675)[0m
+Epoch: [158] [  0/107] eta: 0:02:21 lr: 0.00009932 losses: 9229.8457 (9229.8457) coarse_loss: 9138.2148 (9138.2148) fine_loss: 91.6306 (91.6306) time: 1.3215 data: 0.9030 max_mem: 13509
+Epoch: [158] [106/107] eta: 0:00:00 lr: 0.00009932 losses: 5103.4141 (5116.6335) coarse_loss: 5058.8774 (5062.4403) fine_loss: 52.4922 (54.1932) time: 0.2975 data: 0.0001 max_mem: 13509
+Epoch: [158] Total time: 0:00:33 (0.3092 s / it 
+[[32mINFO] [[32m2023-10-20 12:18:09,258] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009932 losses: 5103.4141 (5116.6335) coarse_loss: 5058.8774 (5062.4403) fine_loss: 52.4922 (54.1932)[0m
+[[32mINFO] [[32m2023-10-20 12:18:12,524] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2897.9180 (2767.8986) coarse_loss: 2857.4487 (2704.8001) fine_loss: 48.4838 (63.0984)[0m
+Epoch: [159] [  0/107] eta: 0:02:29 lr: 0.00009931 losses: 6740.0845 (6740.0845) coarse_loss: 6703.9951 (6703.9951) fine_loss: 36.0893 (36.0893) time: 1.3942 data: 0.8366 max_mem: 13509
+Epoch: [159] [106/107] eta: 0:00:00 lr: 0.00009931 losses: 4903.4507 (5173.6082) coarse_loss: 4863.3096 (5124.1793) fine_loss: 40.4358 (49.4289) time: 0.2930 data: 0.0001 max_mem: 13509
+Epoch: [159] Total time: 0:00:33 (0.3105 s / it 
+[[32mINFO] [[32m2023-10-20 12:18:45,745] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009931 losses: 4903.4507 (5173.6082) coarse_loss: 4863.3096 (5124.1793) fine_loss: 40.4358 (49.4289)[0m
+[[32mINFO] [[32m2023-10-20 12:18:49,050] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2943.7332 (3146.8170) coarse_loss: 2888.9993 (3072.1235) fine_loss: 54.2369 (74.6935)[0m
+Epoch: [160] [  0/107] eta: 0:02:25 lr: 0.00009930 losses: 3961.6602 (3961.6602) coarse_loss: 3921.3806 (3921.3806) fine_loss: 40.2795 (40.2795) time: 1.3575 data: 0.9912 max_mem: 13509
+Epoch: [160] [106/107] eta: 0:00:00 lr: 0.00009930 losses: 5143.9399 (5073.4543) coarse_loss: 5084.7754 (5020.7605) fine_loss: 52.2108 (52.6938) time: 0.2917 data: 0.0001 max_mem: 13509
+Epoch: [160] Total time: 0:00:33 (0.3105 s / it 
+[[32mINFO] [[32m2023-10-20 12:19:22,279] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009930 losses: 5143.9399 (5073.4543) coarse_loss: 5084.7754 (5020.7605) fine_loss: 52.2108 (52.6938)[0m
+[[32mINFO] [[32m2023-10-20 12:19:25,752] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3031.8484 (3727.1209) coarse_loss: 2990.6211 (3676.6235) fine_loss: 42.9615 (50.4974)[0m
+Epoch: [161] [  0/107] eta: 0:02:32 lr: 0.00009929 losses: 4732.6968 (4732.6968) coarse_loss: 4690.7407 (4690.7407) fine_loss: 41.9560 (41.9560) time: 1.4287 data: 0.8066 max_mem: 13509
+Epoch: [161] [106/107] eta: 0:00:00 lr: 0.00009929 losses: 5297.6729 (5122.2058) coarse_loss: 5225.6680 (5072.3972) fine_loss: 48.5588 (49.8085) time: 0.3563 data: 0.0001 max_mem: 13509
+Epoch: [161] Total time: 0:00:35 (0.3312 s / it 
+[[32mINFO] [[32m2023-10-20 12:20:01,194] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009929 losses: 5297.6729 (5122.2058) coarse_loss: 5225.6680 (5072.3972) fine_loss: 48.5588 (49.8085)[0m
+[[32mINFO] [[32m2023-10-20 12:20:04,282] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2672.3018 (3241.6332) coarse_loss: 2624.8508 (3175.1849) fine_loss: 43.8187 (66.4483)[0m
+Epoch: [162] [  0/107] eta: 0:02:05 lr: 0.00009928 losses: 2119.4226 (2119.4226) coarse_loss: 2069.9194 (2069.9194) fine_loss: 49.5031 (49.5031) time: 1.1713 data: 0.7043 max_mem: 13509
+Epoch: [162] [106/107] eta: 0:00:00 lr: 0.00009928 losses: 4637.0928 (4742.1624) coarse_loss: 4604.8369 (4692.0362) fine_loss: 44.4093 (50.1262) time: 0.2856 data: 0.0001 max_mem: 13509
+Epoch: [162] Total time: 0:00:33 (0.3090 s / it 
+[[32mINFO] [[32m2023-10-20 12:20:37,346] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009928 losses: 4637.0928 (4742.1624) coarse_loss: 4604.8369 (4692.0362) fine_loss: 44.4093 (50.1262)[0m
+[[32mINFO] [[32m2023-10-20 12:20:40,637] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1742.5067 (2191.2806) coarse_loss: 1700.3203 (2130.9610) fine_loss: 53.0406 (60.3196)[0m
+Epoch: [163] [  0/107] eta: 0:02:40 lr: 0.00009927 losses: 8105.7173 (8105.7173) coarse_loss: 8047.7417 (8047.7417) fine_loss: 57.9753 (57.9753) time: 1.4961 data: 1.1027 max_mem: 13509
+Epoch: [163] [106/107] eta: 0:00:00 lr: 0.00009927 losses: 5119.6279 (5141.6335) coarse_loss: 5055.7324 (5092.6472) fine_loss: 51.3528 (48.9863) time: 0.2802 data: 0.0001 max_mem: 13509
+Epoch: [163] Total time: 0:00:33 (0.3177 s / it 
+[[32mINFO] [[32m2023-10-20 12:21:14,638] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009927 losses: 5119.6279 (5141.6335) coarse_loss: 5055.7324 (5092.6472) fine_loss: 51.3528 (48.9863)[0m
+[[32mINFO] [[32m2023-10-20 12:21:18,630] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2789.6592 (2289.9511) coarse_loss: 2716.9021 (2234.7496) fine_loss: 52.8837 (55.2015)[0m
+Epoch: [164] [  0/107] eta: 0:03:05 lr: 0.00009926 losses: 8752.7373 (8752.7373) coarse_loss: 8708.8730 (8708.8730) fine_loss: 43.8639 (43.8639) time: 1.7366 data: 1.2563 max_mem: 13509
+Epoch: [164] [106/107] eta: 0:00:00 lr: 0.00009926 losses: 3864.8926 (4672.9664) coarse_loss: 3829.3994 (4619.6921) fine_loss: 58.2563 (53.2743) time: 0.2746 data: 0.0001 max_mem: 13509
+Epoch: [164] Total time: 0:00:33 (0.3091 s / it 
+[[32mINFO] [[32m2023-10-20 12:21:51,711] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009926 losses: 3864.8926 (4672.9664) coarse_loss: 3829.3994 (4619.6921) fine_loss: 58.2563 (53.2743)[0m
+[[32mINFO] [[32m2023-10-20 12:21:55,035] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3155.3259 (3588.3455) coarse_loss: 3133.5212 (3536.1085) fine_loss: 38.8147 (52.2370)[0m
+Epoch: [165] [  0/107] eta: 0:02:18 lr: 0.00009926 losses: 4808.6099 (4808.6099) coarse_loss: 4774.3955 (4774.3955) fine_loss: 34.2146 (34.2146) time: 1.2981 data: 0.8066 max_mem: 13509
+Epoch: [165] [106/107] eta: 0:00:00 lr: 0.00009926 losses: 5052.3945 (4555.6173) coarse_loss: 5015.3481 (4505.9628) fine_loss: 43.4725 (49.6546) time: 0.2854 data: 0.0001 max_mem: 13509
+Epoch: [165] Total time: 0:00:33 (0.3085 s / it 
+[[32mINFO] [[32m2023-10-20 12:22:28,047] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009926 losses: 5052.3945 (4555.6173) coarse_loss: 5015.3481 (4505.9628) fine_loss: 43.4725 (49.6546)[0m
+[[32mINFO] [[32m2023-10-20 12:22:31,169] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 1521.8782 (2560.2337) coarse_loss: 1397.1388 (2493.3759) fine_loss: 62.4364 (66.8578)[0m
+Epoch: [166] [  0/107] eta: 0:02:16 lr: 0.00009925 losses: 3206.1277 (3206.1277) coarse_loss: 3186.5596 (3186.5596) fine_loss: 19.5681 (19.5681) time: 1.2790 data: 0.7349 max_mem: 13509
+Epoch: [166] [106/107] eta: 0:00:00 lr: 0.00009925 losses: 5059.5015 (5231.6808) coarse_loss: 5012.5215 (5181.2650) fine_loss: 49.1635 (50.4158) time: 0.2809 data: 0.0001 max_mem: 13509
+Epoch: [166] Total time: 0:00:33 (0.3099 s / it 
+[[32mINFO] [[32m2023-10-20 12:23:04,334] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009925 losses: 5059.5015 (5231.6808) coarse_loss: 5012.5215 (5181.2650) fine_loss: 49.1635 (50.4158)[0m
+[[32mINFO] [[32m2023-10-20 12:23:07,659] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3325.0291 (3669.5386) coarse_loss: 3227.6201 (3621.2940) fine_loss: 40.7810 (48.2446)[0m
+Epoch: [167] [  0/107] eta: 0:02:27 lr: 0.00009924 losses: 3405.9482 (3405.9482) coarse_loss: 3353.4736 (3353.4736) fine_loss: 52.4745 (52.4745) time: 1.3830 data: 1.0401 max_mem: 13509
+Epoch: [167] [106/107] eta: 0:00:00 lr: 0.00009924 losses: 6298.3286 (5054.6292) coarse_loss: 6272.6436 (5005.1869) fine_loss: 43.9932 (49.4423) time: 0.3047 data: 0.0001 max_mem: 13509
+Epoch: [167] Total time: 0:00:33 (0.3122 s / it 
+[[32mINFO] [[32m2023-10-20 12:23:41,071] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009924 losses: 6298.3286 (5054.6292) coarse_loss: 6272.6436 (5005.1869) fine_loss: 43.9932 (49.4423)[0m
+[[32mINFO] [[32m2023-10-20 12:23:44,306] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2366.1060 (3099.5999) coarse_loss: 2332.6909 (3045.8437) fine_loss: 49.5537 (53.7561)[0m
+Epoch: [168] [  0/107] eta: 0:02:27 lr: 0.00009923 losses: 6157.0801 (6157.0801) coarse_loss: 6082.7261 (6082.7261) fine_loss: 74.3541 (74.3541) time: 1.3816 data: 1.0167 max_mem: 13509
+Epoch: [168] [106/107] eta: 0:00:00 lr: 0.00009923 losses: 4297.7358 (4534.2907) coarse_loss: 4249.5234 (4481.8040) fine_loss: 44.5577 (52.4867) time: 0.2829 data: 0.0001 max_mem: 13509
+Epoch: [168] Total time: 0:00:32 (0.3050 s / it 
+[[32mINFO] [[32m2023-10-20 12:24:16,941] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009923 losses: 4297.7358 (4534.2907) coarse_loss: 4249.5234 (4481.8040) fine_loss: 44.5577 (52.4867)[0m
+[[32mINFO] [[32m2023-10-20 12:24:20,176] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3736.3445 (4021.4499) coarse_loss: 3662.7646 (3963.0227) fine_loss: 52.6050 (58.4272)[0m
+Epoch: [169] [  0/107] eta: 0:02:29 lr: 0.00009922 losses: 3329.8083 (3329.8083) coarse_loss: 3303.4932 (3303.4932) fine_loss: 26.3151 (26.3151) time: 1.3926 data: 1.0123 max_mem: 13509
+Epoch: [169] [106/107] eta: 0:00:00 lr: 0.00009922 losses: 4817.9727 (5071.5102) coarse_loss: 4771.9414 (5020.5452) fine_loss: 38.2371 (50.9650) time: 0.3026 data: 0.0001 max_mem: 13509
+Epoch: [169] Total time: 0:00:33 (0.3150 s / it 
+[[32mINFO] [[32m2023-10-20 12:24:53,882] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009922 losses: 4817.9727 (5071.5102) coarse_loss: 4771.9414 (5020.5452) fine_loss: 38.2371 (50.9650)[0m
+[[32mINFO] [[32m2023-10-20 12:24:57,045] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2571.4778 (2775.3444) coarse_loss: 2548.5146 (2713.5791) fine_loss: 56.1274 (61.7652)[0m
+Epoch: [170] [  0/107] eta: 0:02:31 lr: 0.00009921 losses: 6162.6108 (6162.6108) coarse_loss: 6109.2876 (6109.2876) fine_loss: 53.3234 (53.3234) time: 1.4127 data: 1.0422 max_mem: 13509
+Epoch: [170] [106/107] eta: 0:00:00 lr: 0.00009921 losses: 5613.9424 (5331.4832) coarse_loss: 5576.4932 (5280.6089) fine_loss: 50.7722 (50.8742) time: 0.2965 data: 0.0001 max_mem: 13509
+Epoch: [170] Total time: 0:00:33 (0.3150 s / it 
+[[32mINFO] [[32m2023-10-20 12:25:30,757] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009921 losses: 5613.9424 (5331.4832) coarse_loss: 5576.4932 (5280.6089) fine_loss: 50.7722 (50.8742)[0m
+[[32mINFO] [[32m2023-10-20 12:25:34,003] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2448.2615 (2456.0711) coarse_loss: 2396.0112 (2397.9316) fine_loss: 42.9172 (58.1395)[0m
+Epoch: [171] [  0/107] eta: 0:02:25 lr: 0.00009920 losses: 4429.7339 (4429.7339) coarse_loss: 4390.3760 (4390.3760) fine_loss: 39.3578 (39.3578) time: 1.3613 data: 0.9719 max_mem: 13509
+Epoch: [171] [106/107] eta: 0:00:00 lr: 0.00009920 losses: 5326.4507 (5156.3207) coarse_loss: 5281.7432 (5105.8058) fine_loss: 45.3160 (50.5149) time: 0.2874 data: 0.0001 max_mem: 13509
+Epoch: [171] Total time: 0:00:33 (0.3101 s / it 
+[[32mINFO] [[32m2023-10-20 12:26:07,189] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009920 losses: 5326.4507 (5156.3207) coarse_loss: 5281.7432 (5105.8058) fine_loss: 45.3160 (50.5149)[0m
+[[32mINFO] [[32m2023-10-20 12:26:10,374] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2207.8345 (2905.1336) coarse_loss: 2156.0405 (2855.8393) fine_loss: 47.9827 (49.2943)[0m
+Epoch: [172] [  0/107] eta: 0:02:30 lr: 0.00009919 losses: 3362.9658 (3362.9658) coarse_loss: 3298.8396 (3298.8396) fine_loss: 64.1262 (64.1262) time: 1.4077 data: 1.0355 max_mem: 13509
+Epoch: [172] [106/107] eta: 0:00:00 lr: 0.00009919 losses: 5303.3091 (5119.3308) coarse_loss: 5255.8394 (5068.0151) fine_loss: 47.4697 (51.3157) time: 0.2969 data: 0.0001 max_mem: 13509
+Epoch: [172] Total time: 0:00:33 (0.3117 s / it 
+[[32mINFO] [[32m2023-10-20 12:26:43,728] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009919 losses: 5303.3091 (5119.3308) coarse_loss: 5255.8394 (5068.0151) fine_loss: 47.4697 (51.3157)[0m
+[[32mINFO] [[32m2023-10-20 12:26:47,030] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 2796.1638 (3104.9816) coarse_loss: 2658.4468 (3047.8368) fine_loss: 42.1678 (57.1448)[0m
+Epoch: [173] [  0/107] eta: 0:02:19 lr: 0.00009918 losses: 5901.5659 (5901.5659) coarse_loss: 5816.4355 (5816.4355) fine_loss: 85.1304 (85.1304) time: 1.3009 data: 0.8904 max_mem: 13509
+Epoch: [173] [106/107] eta: 0:00:00 lr: 0.00009918 losses: 4852.9097 (4965.3209) coarse_loss: 4802.6245 (4915.6758) fine_loss: 50.2850 (49.6450) time: 0.2833 data: 0.0001 max_mem: 13509
+Epoch: [173] Total time: 0:00:33 (0.3102 s / it 
+[[32mINFO] [[32m2023-10-20 12:27:20,224] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009918 losses: 4852.9097 (4965.3209) coarse_loss: 4802.6245 (4915.6758) fine_loss: 50.2850 (49.6450)[0m
+[[32mINFO] [[32m2023-10-20 12:27:23,547] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3030.1023 (3684.6250) coarse_loss: 2967.0098 (3630.4620) fine_loss: 42.8092 (54.1630)[0m
+Epoch: [174] [  0/107] eta: 0:02:23 lr: 0.00009917 losses: 4312.6138 (4312.6138) coarse_loss: 4286.7417 (4286.7417) fine_loss: 25.8720 (25.8720) time: 1.3369 data: 0.8104 max_mem: 13509
+Epoch: [174] [106/107] eta: 0:00:00 lr: 0.00009917 losses: 4389.1450 (4747.1103) coarse_loss: 4353.8545 (4698.3846) fine_loss: 46.4952 (48.7258) time: 0.2800 data: 0.0001 max_mem: 13509
+Epoch: [174] Total time: 0:00:32 (0.3054 s / it 
+[[32mINFO] [[32m2023-10-20 12:27:56,231] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009917 losses: 4389.1450 (4747.1103) coarse_loss: 4353.8545 (4698.3846) fine_loss: 46.4952 (48.7258)[0m
+[[32mINFO] [[32m2023-10-20 12:27:59,492] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3337.8052 (3344.6687) coarse_loss: 3312.1641 (3279.5116) fine_loss: 43.4106 (65.1571)[0m
+Epoch: [175] [  0/107] eta: 0:02:35 lr: 0.00009916 losses: 5147.0991 (5147.0991) coarse_loss: 5114.8496 (5114.8496) fine_loss: 32.2496 (32.2496) time: 1.4546 data: 1.0276 max_mem: 13509
+Epoch: [175] [106/107] eta: 0:00:00 lr: 0.00009916 losses: 4492.9326 (4951.4400) coarse_loss: 4437.7979 (4902.5282) fine_loss: 55.0176 (48.9118) time: 0.2764 data: 0.0001 max_mem: 13509
+Epoch: [175] Total time: 0:00:32 (0.3080 s / it 
+[[32mINFO] [[32m2023-10-20 12:28:32,450] [32mtrain_SAR2RGB.py [line:[32m122] : [32mAverage stats:lr: 0.00009916 losses: 4492.9326 (4951.4400) coarse_loss: 4437.7979 (4902.5282) fine_loss: 55.0176 (48.9118)[0m
+[[32mINFO] [[32m2023-10-20 12:28:35,577] [32mtrain_SAR2RGB.py [line:[32m71] : [32mAverage  test stats: losses: 3168.6294 (3167.9039) coarse_loss: 3117.8328 (3113.5970) fine_loss: 50.7967 (54.3068)[0m
+Epoch: [176] [  0/107] eta: 0:02:13 lr: 0.00009915 losses: 637.7896 (637.7896) coarse_loss: 541.2828 (541.2828) fine_loss: 96.5067 (96.5067) time: 1.2432 data: 0.8777 max_mem: 13509
